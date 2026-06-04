@@ -1,0 +1,2172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Five9 Cloud Contact Center Platform</title>
+    <!-- ========================= -->
+    <!-- FIVE9 PAGE GEO + AEO SEO -->
+    <!-- ========================= -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "ICQ24",
+            "url": "https://www.icq24.com",
+            "logo": "https://www.icq24.com/logo.png",
+            "description": "ICQ24, más que un implementador es un socio estratégico especializado en soluciones CX, Contact Center, IA, automatización y workforce optimization para empresas enterprise.",
+            "sameAs": ["https://www.linkedin.com/company/icq24"]
+          },
+
+          {
+            "@type": "Product",
+            "name": "Five9 Cloud Contact Center Platform",
+            "brand": {
+              "@type": "Brand",
+              "name": "Five9"
+            },
+            "category": "CCaaS Platform",
+            "description": "Plataforma CCaaS enterprise que integra omnicanalidad, inteligencia artificial, automatización, analytics y workforce optimization para operaciones modernas de Contact Center.",
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "Five9"
+            },
+            "keywords": [
+              "Five9",
+              "CCaaS",
+              "Contact Center",
+              "Five9 Omnichannel",
+              "Five9 AI",
+              "Five9 Workforce Optimization",
+              "Five9 Analytics",
+              "CX Platform"
+            ]
+          },
+
+          {
+            "@type": "WebPage",
+            "name": "Five9 Cloud Contact Center Platform",
+            "url": "https://www.icq24.com/five9-software-inteligente-contact-center",
+            "description": "Five9 integra omnicanalidad, IA, automatización y analytics para optimizar operaciones CX enterprise.",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "xpath": ["/html/head/title", "/html/body//h1", "/html/body//h2"]
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Contact Center"
+              },
+              {
+                "@type": "Thing",
+                "name": "Customer Experience"
+              },
+              {
+                "@type": "Thing",
+                "name": "Conversational AI"
+              },
+              {
+                "@type": "Thing",
+                "name": "Workforce Optimization"
+              },
+              {
+                "@type": "Thing",
+                "name": "Omnichannel Contact Center"
+              }
+            ]
+          },
+
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué es Five9?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Five9 es una plataforma CCaaS enterprise que integra omnicanalidad, inteligencia artificial, automatización, analytics y workforce optimization."
+                }
+              },
+
+              {
+                "@type": "Question",
+                "name": "¿Qué canales soporta Five9?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Five9 soporta voz, chat, email, SMS y canales digitales desde una sola plataforma omnicanal."
+                }
+              },
+
+              {
+                "@type": "Question",
+                "name": "¿Five9 incluye inteligencia artificial?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Five9 incluye IVAs, Agent Assist, Analytics, Genius AI y automatización conversacional."
+                }
+              },
+
+              {
+                "@type": "Question",
+                "name": "¿Five9 se integra con CRM?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Five9 cuenta con integraciones con Salesforce, HubSpot, Microsoft Dynamics, Odoo y otros sistemas empresariales."
+                }
+              },
+
+              {
+                "@type": "Question",
+                "name": "¿Qué beneficios ofrece Five9?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Five9 ayuda a reducir AHT, automatizar interacciones, mejorar productividad y optimizar la experiencia del cliente."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      /* ==========================================================================
+   DESIGN SYSTEM & VARIABLES - ICQ24 / FIVE9 THEME
+   ========================================================================== */
+      :root {
+        /* Brand Colors */
+        --brand-primary: #0066ff;
+        --brand-primary-hover: #0043a4;
+        --brand-primary-light: #eff6ff;
+
+        /* Backgrounds */
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        /* Typography Colors */
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        /* UI Elements */
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        /* Spacing System (8pt Grid) */
+        --space-2: 0.5rem; /* 8px */
+        --space-3: 0.75rem; /* 12px */
+        --space-4: 1rem; /* 16px */
+        --space-6: 1.5rem; /* 24px */
+        --space-8: 2rem; /* 32px */
+        --space-12: 3rem; /* 48px */
+        --space-16: 4rem; /* 64px */
+        --space-24: 6rem; /* 96px */
+        --space-32: 8rem; /* 128px */
+
+        /* Shadows (Soft Enterprise) */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        --shadow-lg:
+          0 10px 15px -3px rgba(0, 0, 0, 0.04),
+          0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        --shadow-xl:
+          0 20px 25px -5px rgba(0, 0, 0, 0.05),
+          0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+        /* Radii */
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-pill: 9999px;
+      }
+
+      /* ==========================================================================
+   RESET & BASE (Scoped para compatibilidad)
+   ========================================================================== */
+      .icq24-five9-landing {
+        font-family: "Montserrat";
+        color: var(--text-muted);
+        background-color: var(--bg-white);
+        line-height: 1.6;
+        font-size: 17px;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      .icq24-five9-landing *,
+      .icq24-five9-landing *::before,
+      .icq24-five9-landing *::after {
+        box-sizing: border-box;
+      }
+
+      .icq24-five9-landing h1,
+      .icq24-five9-landing h2,
+      .icq24-five9-landing h3,
+      .icq24-five9-landing h4,
+      .icq24-five9-landing strong {
+        color: var(--text-main);
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .icq24-five9-landing p {
+        margin: 0;
+      }
+
+      .icq24-five9-landing a {
+        text-decoration: none;
+        color: var(--brand-primary);
+        transition: all 0.3s ease;
+      }
+
+      .icq24-five9-landing ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ==========================================================================
+   LAYOUT & CONTAINERS
+   ========================================================================== */
+      .icq24-five9-landing .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--space-6);
+      }
+
+      .icq24-five9-landing section {
+        padding: var(--space-6) 0;
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing section {
+          padding: var(--space-16) 0;
+        }
+      }
+
+      .icq24-five9-landing .split-layout {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing .split-layout {
+          flex-direction: row;
+          align-items: center;
+          gap: var(--space-24);
+        }
+        .icq24-five9-landing .layout-left,
+        .icq24-five9-landing .layout-right {
+          flex: 1;
+          min-width: 0;
+        }
+      }
+
+      .icq24-five9-landing .text-center {
+        text-align: center;
+      }
+
+      /* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+      .icq24-five9-landing .kicker {
+        display: inline-block;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        margin-bottom: var(--space-4);
+      }
+
+      .icq24-five9-landing .section-header {
+        max-width: 800px;
+        margin: 0 auto var(--space-16);
+        text-align: center;
+      }
+
+      .icq24-five9-landing .section-header h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: var(--space-6);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .section-header h2 {
+          font-size: 3rem;
+        }
+      }
+
+      .icq24-five9-landing .section-header h2 em {
+        font-style: normal;
+        color: var(--text-light);
+      }
+
+      .icq24-five9-landing .section-header h2 strong {
+        color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .section-header p {
+        font-size: 1.125rem;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      /* ==========================================================================
+   COMPONENTS: BUTTONS & LINKS
+   ========================================================================== */
+      .icq24-five9-landing .btn-primary,
+      .icq24-five9-landing .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 36px;
+        font-family: "montserrat";
+        font-weight: 700;
+        font-size: 1rem;
+        border-radius: var(--radius-pill);
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          background-color 0.3s ease,
+          color 0.3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+        text-align: center;
+      }
+
+      .icq24-five9-landing .btn-primary {
+        background-color: var(--brand-primary);
+        color: var(--text-inverse);
+      }
+
+      .icq24-five9-landing .btn-primary:hover {
+        background-color: var(--brand-primary-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        color: var(--text-inverse);
+      }
+
+      .icq24-five9-landing .btn-secondary {
+        background-color: transparent;
+        color: var(--text-main);
+        border-color: var(--border-light);
+      }
+
+      .icq24-five9-landing .btn-secondary:hover {
+        border-color: var(--brand-primary);
+        color: var(--brand-primary);
+        background-color: var(--brand-primary-light);
+      }
+
+      .icq24-five9-landing .card-link {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 0.9375rem;
+        margin-top: auto;
+        padding-top: var(--space-6);
+      }
+
+      .icq24-five9-landing .card-link:hover {
+        transform: translateX(4px);
+      }
+
+      /* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+      .icq24-five9-landing .hero-section {
+        padding: var(--space-6);
+        background: radial-gradient(
+          circle at top center,
+          var(--brand-primary-light) 0%,
+          var(--bg-white) 60%
+        );
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .icq24-five9-landing .hero-header {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .icq24-five9-landing .hero-header h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: var(--space-6);
+        line-height: 1.1;
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing .hero-header h1 {
+          font-size: 4rem;
+        }
+      }
+
+      .icq24-five9-landing .hero-header h1 strong {
+        color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .hero-header p {
+        font-size: 1.125rem;
+        max-width: 800px;
+        margin: 0 auto var(--space-12);
+        color: var(--text-muted);
+      }
+
+      .icq24-five9-landing .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        justify-content: center;
+        align-items: center;
+        margin-bottom: var(--space-3);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .hero-actions {
+          flex-direction: row;
+        }
+      }
+
+      .icq24-five9-landing .hero-mockup::after,
+      .icq24-five9-landing .composite-mockup::after,
+      .icq24-five9-landing .dashboard-mockup::after,
+      .icq24-five9-landing .analytics-mockup::after {
+        height: 100%;
+      }
+
+      .icq24-five9-landing .hero-mockup img,
+      .icq24-five9-landing .composite-mockup img,
+      .icq24-five9-landing .dashboard-mockup img,
+      .icq24-five9-landing .analytics-mockup img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing .hero-mockup {
+          height: 600px;
+          max-width: 1100px;
+          margin: 0 auto;
+          transform: translateY(40px);
+        }
+        .icq24-five9-landing .composite-mockup,
+        .icq24-five9-landing .dashboard-mockup,
+        .icq24-five9-landing .analytics-mockup {
+          height: 550px;
+        }
+      }
+
+      /* ==========================================================================
+   2. RETOS DE NEGOCIO
+   ========================================================================== */
+      .icq24-five9-landing .business-challenges {
+        background-color: var(--bg-white);
+      }
+
+      .icq24-five9-landing .challenges-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin-bottom: var(--space-16);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .challenges-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing .challenges-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: var(--space-8);
+        }
+        .icq24-five9-landing .card-challenge:nth-child(7) {
+          grid-column: 2;
+        }
+      }
+
+      .icq24-five9-landing .card-challenge {
+        background: var(--bg-light);
+        padding: var(--space-8);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-6);
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .icq24-five9-landing .card-challenge:hover {
+        background: var(--bg-white);
+        border-color: var(--border-light);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+      }
+
+      .icq24-five9-landing .card-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .card-challenge p {
+        font-weight: 500;
+        color: var(--text-main);
+        margin-top: 4px;
+      }
+
+      .icq24-five9-landing .section-closing {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.25rem;
+      }
+
+      /* ==========================================================================
+   3. QUÉ ES FIVE9 (Minicards)
+   ========================================================================== */
+      .icq24-five9-landing .what-is-five9 {
+        background-color: var(--bg-light);
+      }
+
+      .icq24-five9-landing .content-header h2 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-bottom: var(--space-6);
+      }
+
+      .icq24-five9-landing .capabilities-block h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: var(--space-8) 0 var(--space-6);
+      }
+
+      .icq24-five9-landing .minicards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+      }
+
+      .icq24-five9-landing .minicard {
+        background: var(--bg-white);
+        padding: var(--space-4) var(--space-6);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        font-weight: 700;
+        font-size: 0.9375rem;
+        color: var(--text-main);
+        border: 1px solid var(--border-light);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ==========================================================================
+   4. CÓMO TRABAJA FIVE9 (Interactive Carousel)
+   ========================================================================== */
+      .icq24-five9-landing .how-it-works {
+        background-color: var(--bg-white);
+        overflow: hidden;
+      }
+
+      .icq24-five9-landing .interactive-carousel {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .icq24-five9-landing .carousel-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: var(--space-6);
+        padding: var(--space-8) 2px;
+        scrollbar-width: none;
+      }
+
+      .icq24-five9-landing .carousel-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .icq24-five9-landing .carousel-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        background: var(--bg-white);
+        padding: var(--space-12);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border-light);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .carousel-card {
+          padding: var(--space-16);
+        }
+      }
+
+      .icq24-five9-landing .carousel-card h3 {
+        font-size: 1.75rem;
+        margin-bottom: var(--space-4);
+      }
+
+      .icq24-five9-landing .carousel-card p {
+        font-size: 1.125rem;
+      }
+
+      .icq24-five9-landing .carousel-controls {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-4);
+        margin-top: var(--space-6);
+      }
+
+      .icq24-five9-landing .carousel-control {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid var(--border-light);
+        background: var(--bg-white);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        color: var(--text-main);
+        font-weight: bold;
+      }
+
+      .icq24-five9-landing .carousel-control:hover {
+        background: var(--brand-primary);
+        color: var(--bg-white);
+        border-color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .carousel-pagination {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: var(--space-6);
+      }
+
+      .icq24-five9-landing .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--border-light);
+        transition: all 0.3s;
+      }
+
+      .icq24-five9-landing .dot.active {
+        background: var(--brand-primary);
+        width: 24px;
+        border-radius: var(--radius-pill);
+      }
+
+      /* ==========================================================================
+   5. ECOSISTEMA (Infinite Scroll)
+   ========================================================================== */
+      .icq24-five9-landing .ecosystem-section {
+        background-color: var(--bg-light);
+        overflow: hidden;
+      }
+
+      .icq24-five9-landing .infinite-scroll-carousel {
+        display: flex;
+        padding: var(--space-8) 0 var(--space-16);
+      }
+
+      .icq24-five9-landing .scroll-track {
+        display: flex;
+        gap: var(--space-6);
+        padding-left: var(--space-6);
+        width: max-content;
+        animation: scroll 60s linear infinite;
+      }
+
+      .icq24-five9-landing .scroll-track:hover {
+        animation-play-state: paused;
+      }
+
+      .icq24-five9-landing .ecosystem-card {
+        width: 320px;
+        flex-shrink: 0;
+        background: var(--bg-white);
+        padding: var(--space-8);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .icq24-five9-landing .ecosystem-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-2);
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ==========================================================================
+   6. ¿POR QUÉ FIVE9? (Comparison)
+   ========================================================================== */
+      .icq24-five9-landing .why-five9 {
+        background: var(--bg-white);
+      }
+
+      .icq24-five9-landing .comparison-table {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+        max-width: 1000px;
+        margin: 0 auto var(--space-16);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .comparison-table {
+          flex-direction: row;
+          background: var(--bg-light);
+          border-radius: var(--radius-lg);
+          gap: 0;
+        }
+        .icq24-five9-landing .col-traditional,
+        .icq24-five9-landing .col-modern {
+          flex: 1;
+          padding: var(--space-12);
+        }
+      }
+
+      .icq24-five9-landing .col-header {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-8);
+        text-align: center;
+      }
+
+      .icq24-five9-landing .col-traditional {
+        opacity: 0.6;
+      }
+
+      .icq24-five9-landing .col-traditional .col-header {
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+
+      .icq24-five9-landing .col-modern {
+        background: var(--bg-white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-xl);
+        padding: var(--space-8);
+        border: 2px solid var(--brand-primary-light);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .col-modern {
+          padding: var(--space-12);
+          transform: scale(1.05);
+        }
+      }
+
+      .icq24-five9-landing .col-modern .col-header {
+        font-weight: 800;
+        color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .comparison-list li {
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid var(--border-light);
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .icq24-five9-landing .comparison-list li:last-child {
+        border-bottom: none;
+      }
+
+      .icq24-five9-landing .col-modern .comparison-list li {
+        font-weight: 700;
+        color: var(--text-main);
+      }
+
+      .icq24-five9-landing .icon-check {
+        color: var(--brand-primary);
+        font-weight: 800;
+        margin-right: var(--space-4);
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      /* ==========================================================================
+   7. ESCENARIOS DE USO
+   ========================================================================== */
+      .icq24-five9-landing .use-cases {
+        background: var(--bg-light);
+      }
+
+      .icq24-five9-landing .use-cases-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        margin-bottom: var(--space-16);
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing .use-cases-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .icq24-five9-landing .full-width {
+          grid-column: 1 / -1;
+          max-width: 800px;
+          justify-self: center;
+        }
+      }
+
+      .icq24-five9-landing .case-card {
+        background: var(--bg-white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        padding: var(--space-12);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+        border: 1px solid var(--border-light);
+        transition: var(--shadow-lg);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .case-card {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+      }
+
+      .icq24-five9-landing .case-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .icq24-five9-landing .case-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--brand-primary-light);
+        border-radius: var(--radius-md);
+        flex-shrink: 0;
+      }
+
+      .icq24-five9-landing .case-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .icq24-five9-landing .case-content h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: var(--space-4);
+      }
+
+      .icq24-five9-landing .case-content h3 strong {
+        font-weight: 800;
+      }
+
+      /* ==========================================================================
+   8. INDUSTRIAS (Dark Premium)
+   ========================================================================== */
+      .icq24-five9-landing .industries-section {
+        background-color: var(--bg-dark);
+        color: var(--text-inverse);
+      }
+
+      .icq24-five9-landing .industries-section .section-header h2,
+      .icq24-five9-landing .industries-section .section-header em,
+      .icq24-five9-landing .industries-section .section-closing p,
+      .icq24-five9-landing .industries-section .section-closing strong {
+        color: var(--text-inverse);
+      }
+
+      .icq24-five9-landing .industries-section .kicker {
+        color: var(--text-light);
+      }
+
+      .icq24-five9-landing .industries-carousel {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: var(--space-8) var(--space-6) var(--space-16);
+        scrollbar-width: none;
+        cursor: grab;
+      }
+
+      .icq24-five9-landing .industries-carousel:active {
+        cursor: grabbing;
+      }
+
+      .icq24-five9-landing .industries-carousel::-webkit-scrollbar {
+        display: none;
+      }
+
+      .icq24-five9-landing .industries-carousel .carousel-track {
+        display: flex;
+        gap: var(--space-6);
+        width: max-content;
+        padding: 0;
+      }
+
+      .icq24-five9-landing .industry-card {
+        width: 320px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        background: var(--bg-dark-elevated);
+        border: 1px solid var(--border-dark);
+        padding: var(--space-12);
+        border-radius: var(--radius-lg);
+        text-align: center;
+      }
+
+      .icq24-five9-landing .industry-icon {
+        width: 64px;
+        height: 64px;
+        background: var(--brand-primary);
+        border-radius: 50%;
+        margin: 0 auto var(--space-6);
+      }
+
+      .icq24-five9-landing .industry-card h3 {
+        font-size: 1.25rem;
+        color: var(--text-inverse);
+        margin-bottom: var(--space-4);
+      }
+
+      .icq24-five9-landing .industry-card p {
+        color: var(--text-light);
+      }
+
+      /* ==========================================================================
+   9. IMPACTOS AL NEGOCIO
+   ========================================================================== */
+      .icq24-five9-landing .business-impact {
+        background: var(--bg-white);
+      }
+
+      .icq24-five9-landing .impact-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+      }
+
+      .icq24-five9-landing .impact-block {
+        background: var(--bg-light);
+        padding: var(--space-8);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-light);
+      }
+
+      .icq24-five9-landing .impact-block h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-6);
+      }
+
+      .icq24-five9-landing .tags-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+
+      .icq24-five9-landing .tag-pill {
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 8px 16px;
+        background: var(--bg-white);
+        color: var(--text-main);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-pill);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .icq24-five9-landing .tags-group.accent .tag-pill {
+        background: var(--brand-primary-light);
+        color: var(--brand-primary);
+        border-color: transparent;
+      }
+
+      /* ==========================================================================
+   10. RESULTADOS MEDIBLES
+   ========================================================================== */
+      .icq24-five9-landing .measurable-results {
+        background: var(--bg-light);
+      }
+
+      .icq24-five9-landing .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--space-6);
+      }
+
+      @media (min-width: 576px) {
+        .icq24-five9-landing .metrics-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .icq24-five9-landing .metric-card {
+        background: var(--bg-white);
+        padding: var(--space-8);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-light);
+      }
+
+      .icq24-five9-landing .metric-value {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--brand-primary);
+        margin-bottom: var(--space-2);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      .icq24-five9-landing .metric-card p {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-main);
+      }
+
+      /* ==========================================================================
+   11. ¿POR QUÉ ICQ24?
+   ========================================================================== */
+      .icq24-five9-landing .why-icq24 {
+        background: var(--bg-white);
+      }
+
+      .icq24-five9-landing .differentials-row {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+        margin-bottom: var(--space-16);
+      }
+
+      @media (min-width: 992px) {
+        .icq24-five9-landing .differentials-row {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      .icq24-five9-landing .differential-capsule {
+        display: flex;
+        align-items: center;
+        background: var(--bg-white);
+        padding: var(--space-3) var(--space-6) var(--space-3) var(--space-3);
+        border-radius: var(--radius-pill);
+        border: 1px solid var(--border-light);
+        gap: var(--space-4);
+        box-shadow: var(--shadow-md);
+        flex: 1 1 auto;
+        max-width: 400px;
+      }
+
+      .icq24-five9-landing .capsule-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--brand-primary-light);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .icq24-five9-landing .differential-capsule strong {
+        font-size: 1rem;
+        flex: 1;
+      }
+
+      .icq24-five9-landing .capsule-number {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--border-light);
+      }
+
+      /* ==========================================================================
+   12. AWARDS
+   ========================================================================== */
+      .icq24-five9-landing .awards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+        max-width: 900px;
+        margin: 0 auto var(--space-12);
+      }
+
+      @media (min-width: 768px) {
+        .icq24-five9-landing .awards-grid {
+          flex-direction: row;
+        }
+      }
+
+      .icq24-five9-landing .award-card {
+        flex: 1;
+        background: var(--bg-white);
+        padding: var(--space-12);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+        border: 1px solid var(--border-light);
+      }
+
+      .icq24-five9-landing .award-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--brand-primary-light);
+        border-radius: 50%;
+        margin: 0 auto var(--space-6);
+      }
+
+      .icq24-five9-landing .award-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-2);
+      }
+
+      /* ==========================================================================
+   13. FAQS
+   ========================================================================== */
+      .icq24-five9-landing .faq-section {
+        background: var(--bg-light);
+      }
+
+      .icq24-five9-landing .faq-accordion {
+        max-width: 800px;
+        margin: 0 auto var(--space-8);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .icq24-five9-landing .faq-item {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: box-shadow 0.3s;
+      }
+
+      .icq24-five9-landing .faq-item summary {
+        padding: var(--space-6) var(--space-8);
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: var(--text-main);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .icq24-five9-landing .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .icq24-five9-landing .faq-icon {
+        font-size: 1.5rem;
+        color: var(--text-light);
+        transition: transform 0.3s;
+      }
+
+      .icq24-five9-landing .faq-item[open] {
+        box-shadow: var(--shadow-md);
+        border-color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .faq-item[open] summary {
+        border-bottom: 1px solid var(--border-light);
+        color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .faq-item[open] .faq-icon {
+        transform: rotate(180deg);
+        color: var(--brand-primary);
+      }
+
+      .icq24-five9-landing .faq-item p {
+        padding: var(--space-6) var(--space-8);
+        font-size: 1.05rem;
+      }
+
+      .icq24-five9-landing .faq-escape {
+        font-size: 1.05rem;
+        margin-top: var(--space-12);
+      }
+
+      .icq24-five9-landing .faq-escape a {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="icq24-five9-landing">
+      <!-- 1. HERO SECTION -->
+      <section class="hero-section">
+        <div class="container">
+          <header class="hero-header">
+            <span class="kicker">Five9 Cloud Contact Center Platform</span>
+            <h1>
+              La plataforma inteligente que transforma tu Contact Center en una
+              <strong>operación eficiente, automatizada y escalable.</strong>
+            </h1>
+            <p>
+              El <strong>Contact Center moderno</strong> ya no se trata solo de
+              atender llamadas. Las organizaciones necesitan operaciones capaces
+              de integrar canales, automatizar interacciones, optimizar agentes
+              y tomar decisiones basadas en datos en tiempo real.
+              <strong
+                >Five9 unifica CX, IA, automatización, workforce optimization y
+                analytics en una sola plataforma</strong
+              >
+              cloud diseñada para operaciones enterprise.
+            </p>
+          </header>
+          <div class="hero-actions">
+            <button class="btn-primary">Agenda una demo personalizada</button>
+            <a href="#" class="btn-secondary"
+              >Descubre cómo transformar tu operación →</a
+            >
+          </div>
+          <div class="hero-mockup">
+            <img src="/Assets/Muckup Five9.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. RETOS DE NEGOCIO -->
+      <section class="business-challenges">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Retos de negocio</span>
+            <h2>Cuando la operación crece, la <em>complejidad</em> también.</h2>
+            <p>
+              Muchas organizaciones siguen operando con herramientas
+              desconectadas, procesos manuales y poca visibilidad operativa,
+              generando:
+            </p>
+          </header>
+          <div class="challenges-grid">
+            <article class="card-challenge">
+              <span class="card-number">01</span>
+              <p>Altos tiempos de espera y AHT elevado.</p>
+            </article>
+            <article class="card-challenge">
+              <span class="card-number">02</span>
+              <p>Agentes sin contexto completo del cliente.</p>
+            </article>
+            <article class="card-challenge">
+              <span class="card-number">03</span>
+              <p>Costos operativos crecientes.</p>
+            </article>
+            <article class="card-challenge">
+              <span class="card-number">04</span>
+              <p>Dificultad para escalar en picos de demanda.</p>
+            </article>
+            <article class="card-challenge">
+              <span class="card-number">05</span>
+              <p>Experiencias inconsistentes entre canales.</p>
+            </article>
+            <article class="card-challenge">
+              <span class="card-number">06</span>
+              <p>Baja automatización y exceso de tareas repetitivas.</p>
+            </article>
+            <article class="card-challenge">
+              <span class="card-number">07</span>
+              <p>Falta de métricas accionables en tiempo real.</p>
+            </article>
+          </div>
+          <div class="section-closing">
+            <p>
+              El problema no es el volumen de interacciones.
+              <strong
+                >Es operar sin una plataforma que conecte experiencia,
+                automatización y datos en un mismo modelo operativo.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. QUÉ ES FIVE9? -->
+      <section class="what-is-five9">
+        <div class="container split-layout">
+          <div class="layout-left">
+            <div class="composite-mockup"></div>
+          </div>
+          <div class="layout-right">
+            <header class="content-header">
+              <span class="kicker">Soluciones Enterprise</span>
+              <h2>Five9: el sistema operativo de CX para empresas modernas.</h2>
+              <p>
+                Five9 es la plataforma CCaaS (Contact Center as a Service) líder
+                diseñada para centralizar y orquestar todas las interacciones
+                del cliente desde una arquitectura cloud segura, flexible y
+                preparada para operaciones enterprise.
+              </p>
+            </header>
+            <div class="capabilities-block">
+              <h3>
+                Más que una solución de Contact Center, Five9 funciona como un
+                ecosistema inteligente que conecta:
+              </h3>
+              <div class="minicards-grid">
+                <article class="minicard">
+                  <span class="bs-icon"
+                    ><i class="fa-solid fa-crosshairs"></i></span
+                  >Inteligencia Artificial
+                </article>
+                <article class="minicard">
+                  <span class="bs-icon"><i class="fa-solid fa-ban"></i></span
+                  >Automatización
+                </article>
+                <article class="minicard">
+                  <span class="bs-icon"
+                    ><i class="fa-solid fa-chart-pie"></i></span
+                  >Analytics
+                </article>
+                <article class="minicard">
+                  <span class="bs-icon"
+                    ><i class="fa-solid fa-list-check"></i></span
+                  >Omnicanalidad
+                </article>
+              </div>
+            </div>
+            <p style="margin-bottom: 1.5rem; color: var(--text-main)">
+              <strong
+                >Todo desde una sola plataforma escalable y completamente
+                medible.</strong
+              >
+            </p>
+            <a href="#" class="btn-primary"
+              >Explora las capacidades de Five9 →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CÓMO TRABAJA FIVE9 -->
+      <section class="how-it-works">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Cómo trabaja Five9</span>
+            <h2>Cómo Five9 transforma la operación del Contact Center.</h2>
+            <p>
+              Un modelo operativo diseñado para automatizar, optimizar y
+              escalar.
+            </p>
+          </header>
+          <div class="interactive-carousel">
+            <div class="carousel-track">
+              <article class="carousel-card">
+                <span class="bs-icon" style="font-size: 50px"
+                  ><i class="fa-solid fa-crosshairs"></i
+                ></span>
+                <span class="kicker"
+                  >Funcionalidades Cloud · Optimización con IA</span
+                >
+                <h3>Omnicanalidad unificada</h3>
+                <p>
+                  Gestiona voz, chat, email, SMS y canales digitales desde una
+                  sola plataforma.
+                </p>
+                <a href="#" class="card-link"
+                  >Ver detalles de esta funcionalidad →</a
+                >
+              </article>
+              <article class="carousel-card">
+                <span class="kicker"
+                  >Funcionalidades Cloud · Optimización con IA</span
+                >
+                <h3>IA aplicada al CX</h3>
+                <p>
+                  Automatiza conversaciones, asiste agentes y optimiza
+                  decisiones operativas en tiempo real.
+                </p>
+                <a href="#" class="card-link"
+                  >Ver detalles de esta funcionalidad →</a
+                >
+              </article>
+              <article class="carousel-card">
+                <span class="kicker"
+                  >Funcionalidades Cloud · Optimización con IA</span
+                >
+                <h3>Workforce Optimization</h3>
+                <p>
+                  Forecasting, calidad, monitoreo y desempeño alineados a
+                  productividad y SLAs.
+                </p>
+                <a href="#" class="card-link"
+                  >Ver detalles de esta funcionalidad →</a
+                >
+              </article>
+              <article class="carousel-card">
+                <span class="kicker"
+                  >Funcionalidades Cloud · Optimización con IA</span
+                >
+                <h3>Automatización inteligente</h3>
+                <p>
+                  Reduce tareas repetitivas y optimiza campañas outbound con IA
+                  y marcación predictiva.
+                </p>
+                <a href="#" class="card-link"
+                  >Ver detalles de esta funcionalidad →</a
+                >
+              </article>
+              <article class="carousel-card">
+                <span class="kicker"
+                  >Funcionalidades Cloud · Optimización con IA</span
+                >
+                <h3>Analytics & Insights</h3>
+                <p>
+                  Convierte conversaciones y métricas operativas en decisiones
+                  accionables.
+                </p>
+                <a href="#" class="card-link"
+                  >Ver detalles de esta funcionalidad →</a
+                >
+              </article>
+              <article class="carousel-card">
+                <span class="kicker"
+                  >Funcionalidades Cloud · Optimización con IA</span
+                >
+                <h3>Integraciones CRM</h3>
+                <p>
+                  Conecta Five9 con Salesforce, HubSpot, Microsoft Dynamics,
+                  Odoo y otros sistemas empresariales.
+                </p>
+                <a href="#" class="card-link"
+                  >Ver detalles de esta funcionalidad →</a
+                >
+              </article>
+            </div>
+            <div class="carousel-controls">
+              <button class="carousel-control prev" aria-label="Anterior">
+                &lt;
+              </button>
+              <button class="carousel-control next" aria-label="Siguiente">
+                &gt;
+              </button>
+            </div>
+            <div class="carousel-pagination">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. ECOSISTEMA FIVE9 -->
+      <section class="ecosystem-section">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Ecosistema Five9</span>
+            <h2>
+              Un ecosistema completo para <em>modernizar</em> CX y operaciones.
+            </h2>
+          </header>
+        </div>
+        <div class="infinite-scroll-carousel">
+          <div class="scroll-track">
+            <article class="ecosystem-card">
+              <h3>Five9 Omnicanal</h3>
+              <p>
+                Experiencias conectadas y consistentes en todos los canales.
+              </p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>Five9 IVAs</h3>
+              <p>
+                Automatización conversacional con IA de voz y canales digitales.
+              </p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>Five9 Agent Assist</h3>
+              <p>Asistencia inteligente en tiempo real para agentes.</p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>Five9 Genius AI</h3>
+              <p>
+                IA generativa y agéntica para automatizar y optimizar
+                decisiones.
+              </p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>Five9 Analytics</h3>
+              <p>Insights accionables desde voz y canales digitales.</p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>Workforce Optimization</h3>
+              <p>Control total de productividad, calidad y desempeño.</p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>Predictive Dialer</h3>
+              <p>
+                Mayor productividad outbound y mejor utilización del agente.
+              </p>
+            </article>
+            <article class="ecosystem-card">
+              <h3>CRM Integrations</h3>
+              <p>
+                Datos y contexto unificados para operar con visibilidad
+                completa.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="container text-center">
+          <a href="#" class="btn-primary"
+            >Descubre el ecosistema completo de Five9 →</a
+          >
+        </div>
+      </section>
+
+      <!-- 6. POR QUÉ FIVE9? -->
+      <section class="why-five9">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">¿Por qué Five9?</span>
+            <h2>
+              Las operaciones tradicionales <em>ya no escalan</em> al ritmo del
+              negocio.
+            </h2>
+          </header>
+          <div class="comparison-table">
+            <div class="col-traditional">
+              <h3 class="col-header">Modelos tradicionales</h3>
+              <ul class="comparison-list">
+                <li>Herramientas aisladas</li>
+                <li>Procesos manuales</li>
+                <li>Baja visibilidad operacional</li>
+                <li>Escalabilidad limitada</li>
+                <li>Experiencias inconsistentes</li>
+                <li>Datos fragmentados</li>
+                <li>Reacción operativa tardía</li>
+              </ul>
+            </div>
+            <div class="col-modern">
+              <h3 class="col-header">Five9 Cloud CX Platform</h3>
+              <ul class="comparison-list">
+                <li><span class="icon-check">✓</span> Ecosistema unificado</li>
+                <li>
+                  <span class="icon-check">✓</span> IA + automatización
+                  integrada
+                </li>
+                <li>
+                  <span class="icon-check">✓</span> Analytics y monitoreo en
+                  tiempo real
+                </li>
+                <li>
+                  <span class="icon-check">✓</span> Arquitectura cloud
+                  enterprise
+                </li>
+                <li>
+                  <span class="icon-check">✓</span> Omnicanalidad conectada
+                </li>
+                <li>
+                  <span class="icon-check">✓</span> Contexto unificado del
+                  cliente
+                </li>
+                <li>
+                  <span class="icon-check">✓</span> Decisiones basadas en IA e
+                  insights
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="section-closing">
+            <p>
+              Las expectativas del cliente evolucionan más rápido que los
+              modelos tradicionales de atención.
+              <strong
+                >Five9 permite modernizar CX sin aumentar complejidad
+                operacional.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. ESCENARIOS DE USO -->
+      <section class="use-cases">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Escenarios de Uso Five9</span>
+            <h2>
+              Cómo Five9 impacta <strong>escenarios reales</strong> de
+              operación.
+            </h2>
+          </header>
+          <div class="use-cases-grid">
+            <article class="case-card">
+              <div class="case-icon"></div>
+              <div class="case-content">
+                <span class="kicker">Caso de Uso Aplicado</span>
+                <h3>
+                  <strong>Reducir saturación</strong> en servicio al cliente
+                </h3>
+                <p>
+                  Automatiza contactos repetitivos con IA conversacional y
+                  libera capacidad operativa para casos de mayor valor.
+                </p>
+                <a href="#" class="card-link">Explorar caso de uso →</a>
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="case-icon"></div>
+              <div class="case-content">
+                <span class="kicker">Caso de Uso Aplicado</span>
+                <h3>
+                  <strong>Mejorar productividad</strong> en cobranza outbound
+                </h3>
+                <p>
+                  Marcación predictiva, automatización y analytics para aumentar
+                  conversaciones efectivas y reducir tiempo muerto.
+                </p>
+                <a href="#" class="card-link">Explorar caso de uso →</a>
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="case-icon"></div>
+              <div class="case-content">
+                <span class="kicker">Caso de Uso Aplicado</span>
+                <h3>
+                  <strong>Escalar soporte omnicanal</strong> sin aumentar
+                  headcount
+                </h3>
+                <p>
+                  Centraliza canales y automatiza resolución manteniendo
+                  continuidad de contexto.
+                </p>
+                <a href="#" class="card-link">Explorar caso de uso →</a>
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="case-icon"></div>
+              <div class="case-content">
+                <span class="kicker">Caso de Uso Aplicado</span>
+                <h3>
+                  <strong>Optimizar calidad</strong> y desempeño operativo
+                </h3>
+                <p>
+                  WFO, Quality Management y Analytics conectados para mejorar
+                  SLAs, coaching y productividad.
+                </p>
+                <a href="#" class="card-link">Explorar caso de uso →</a>
+              </div>
+            </article>
+            <article class="case-card full-width">
+              <div class="case-icon"></div>
+              <div class="case-content">
+                <span class="kicker">Caso de Uso Aplicado</span>
+                <h3><strong>Unificar CX</strong> y datos del cliente</h3>
+                <p>
+                  Integraciones CRM + voz + analytics para operar con
+                  visibilidad completa del customer journey.
+                </p>
+                <a href="#" class="card-link">Explorar caso de uso →</a>
+              </div>
+            </article>
+          </div>
+          <div class="text-center mt-12">
+            <a href="#" class="btn-primary"
+              >Explora cómo Five9 se adapta a tu operación →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. INDUSTRIAS -->
+      <section class="industries-section">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Industrias</span>
+            <h2>
+              Five9 impulsa operaciones donde la experiencia y la eficiencia
+              <em>no pueden fallar</em>.
+            </h2>
+          </header>
+        </div>
+        <div class="industries-carousel">
+          <div class="carousel-track">
+            <article class="industry-card">
+              <div class="industry-icon"></div>
+              <h3>Banca y servicios financieros</h3>
+              <p>
+                Automatización segura, cumplimiento y atención de alto volumen.
+              </p>
+            </article>
+            <article class="industry-card">
+              <div class="industry-icon"></div>
+              <h3>Retail y Ecommerce</h3>
+              <p>
+                Omnicanalidad, autoservicio y escalabilidad para operaciones
+                dinámicas.
+              </p>
+            </article>
+            <article class="industry-card">
+              <div class="industry-icon"></div>
+              <h3>Telecomunicaciones</h3>
+              <p>
+                Mayor productividad y reducción de costos en operaciones
+                masivas.
+              </p>
+            </article>
+            <article class="industry-card">
+              <div class="industry-icon"></div>
+              <h3>Salud</h3>
+              <p>Experiencias ágiles y seguras para operaciones críticas.</p>
+            </article>
+            <article class="industry-card">
+              <div class="industry-icon"></div>
+              <h3>BPO y Outsourcing</h3>
+              <p>Escalabilidad, control de SLAs y eficiencia operacional.</p>
+            </article>
+            <article class="industry-card">
+              <div class="industry-icon"></div>
+              <h3>Seguros</h3>
+              <p>
+                Atención omnicanal y automatización de procesos de servicio.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="container section-closing text-center mt-8">
+          <p style="margin-bottom: 1.5rem">
+            Cada operación tiene retos distintos.
+            <strong>La solución no debería ser estándar.</strong>
+          </p>
+          <a href="#" class="btn-primary"
+            >Solicita diagnóstico personalizado →</a
+          >
+        </div>
+      </section>
+
+      <!-- 9. IMPACTOS AL NEGOCIO -->
+      <section class="business-impact">
+        <div class="container split-layout">
+          <div class="layout-left">
+            <div class="dashboard-mockup"></div>
+          </div>
+          <div class="layout-right">
+            <header
+              class="section-header"
+              style="text-align: left; margin-bottom: 2rem"
+            >
+              <span class="kicker">Impactos al negocio</span>
+              <h2 style="font-size: 2.25rem">
+                Más que tecnología: impacto real en CX, Operaciones y Dirección.
+              </h2>
+              <p style="margin-left: 0">
+                Logra mejoras medibles implementando la plataforma líder con la
+                metodología y experiencia certificada de ICQ24.
+              </p>
+            </header>
+            <div class="impact-blocks">
+              <article class="impact-block">
+                <h3>Experiencia del Cliente (CX)</h3>
+                <div class="tags-group">
+                  <span class="tag-pill">Canales Coherentes</span>
+                  <span class="tag-pill">Menor Tiempo de Respuesta</span>
+                  <span class="tag-pill">Incremento en CSAT y FCR</span>
+                </div>
+              </article>
+              <article class="impact-block">
+                <h3>Operación</h3>
+                <div class="tags-group accent">
+                  <span class="tag-pill">Reducción de Costo por Contacto</span>
+                  <span class="tag-pill">+ Productividad por Agente</span>
+                  <span class="tag-pill">Automatización de Tareas</span>
+                  <span class="tag-pill">Escalabilidad Simple</span>
+                </div>
+              </article>
+              <article class="impact-block">
+                <h3>Dirección e IT</h3>
+                <div class="tags-group">
+                  <span class="tag-pill">Arquitectura Cloud Segura</span>
+                  <span class="tag-pill">Visibilidad End-to-End</span>
+                  <span class="tag-pill">Integración Simplificada</span>
+                  <span class="tag-pill">Previsibilidad del Negocio</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center" style="margin-top: 4rem">
+          <p
+            style="
+              font-size: 1.25rem;
+              font-weight: 700;
+              color: var(--text-main);
+              margin-bottom: 1.5rem;
+            "
+          >
+            ¿Buscas resultados que optimicen tu operación?
+          </p>
+          <a href="#" class="btn-primary">Agenda una DEMO con un experto →</a>
+        </div>
+      </section>
+
+      <!-- 10. RESULTADOS MEDIBLES -->
+      <section class="measurable-results">
+        <div class="container split-layout">
+          <div class="layout-left">
+            <div class="analytics-mockup"></div>
+          </div>
+          <div class="layout-right">
+            <header
+              class="section-header"
+              style="text-align: left; margin-bottom: 2rem"
+            >
+              <span class="kicker">Resultados de Impacto</span>
+              <h2 style="font-size: 2.25rem">
+                Resultados medibles cuando CX, IA y automatización trabajan como
+                <strong>un solo modelo operativo</strong>.
+              </h2>
+            </header>
+            <div class="metrics-grid">
+              <article class="metric-card">
+                <h3 class="metric-value">-30%</h3>
+                <p>Reducción potencial en el AHT (Average Handling Time)</p>
+              </article>
+              <article class="metric-card">
+                <h3 class="metric-value">+ Adopción</h3>
+                <p>
+                  Mayor migración hacia autoservicio eficiente e IA
+                  conversacional
+                </p>
+              </article>
+              <article class="metric-card">
+                <h3 class="metric-value">+ Productividad</h3>
+                <p>
+                  Optimización del desempeño y mayor capacidad operativa por
+                  agente
+                </p>
+              </article>
+              <article class="metric-card">
+                <h3 class="metric-value">- Costos</h3>
+                <p>
+                  Disminución del costo operativo por contacto mediante
+                  automatización masiva
+                </p>
+              </article>
+              <article class="metric-card">
+                <h3 class="metric-value">100% Conectado</h3>
+                <p>
+                  Consistencia absoluta entre canales, flujos de datos y equipos
+                  de atención
+                </p>
+              </article>
+              <article class="metric-card">
+                <h3 class="metric-value">Escalabilidad</h3>
+                <p>
+                  Crecimiento transaccional fluido sin necesidad de aumentar el
+                  headcount de forma proporcional
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container section-closing text-center"
+          style="margin-top: 4rem"
+        >
+          <p style="margin-bottom: 1.5rem">
+            Five9 no solo soporta la operación.
+            <strong
+              >La convierte en una operación inteligente, automatizada y
+              preparada para evolucionar.</strong
+            >
+          </p>
+          <a href="#" class="btn-primary"
+            >Descubre cuánto puede optimizar Five9 tu operación →</a
+          >
+        </div>
+      </section>
+
+      <!-- 11. ¿POR QUÉ ICQ24? -->
+      <section class="why-icq24">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">ICQ24 + Five9</span>
+            <h2>
+              Más que implementación: una estrategia completa de
+              <em>transformación operacional</em>.
+            </h2>
+            <p>
+              En ICQ24 no solo implementamos tecnología. Diseñamos modelos
+              operativos sobre Five9 alineando automatización, IA, analytics,
+              workforce y customer experience para asegurar impacto real en
+              productividad, control y escalabilidad.
+            </p>
+          </header>
+          <div class="differentials-row">
+            <article class="differential-capsule">
+              <div class="capsule-icon"></div>
+              <strong>Especialistas en CX enterprise</strong>
+              <span class="capsule-number">01</span>
+            </article>
+            <article class="differential-capsule">
+              <div class="capsule-icon"></div>
+              <strong>Experiencia en automatización y AI</strong>
+              <span class="capsule-number">02</span>
+            </article>
+            <article class="differential-capsule">
+              <div class="capsule-icon"></div>
+              <strong>Integración con ecosistemas empresariales</strong>
+              <span class="capsule-number">03</span>
+            </article>
+            <article class="differential-capsule">
+              <div class="capsule-icon"></div>
+              <strong>Acompañamiento estratégico y operativo</strong>
+              <span class="capsule-number">04</span>
+            </article>
+            <article class="differential-capsule">
+              <div class="capsule-icon"></div>
+              <strong>Partner reconocido por Five9</strong>
+              <span class="capsule-number">05</span>
+            </article>
+          </div>
+          <div class="text-center">
+            <a href="#" class="btn-primary">Agenda una demo personalizada →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. RECONOCIMIENTOS -->
+      <section class="awards-section">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Premios & Credenciales</span>
+            <h2>Reconocidos por Five9 por excelencia y resultados.</h2>
+          </header>
+          <div class="awards-grid">
+            <article class="award-card">
+              <div class="award-icon"></div>
+              <h3>Global Partner Award 2023</h3>
+              <p style="font-size: 0.875rem">
+                Otorgado oficialmente por Five9 Inc.
+              </p>
+            </article>
+            <article class="award-card">
+              <div class="award-icon"></div>
+              <h3>Partner de Excelencia Five9 2025</h3>
+              <p style="font-size: 0.875rem">
+                Otorgado oficialmente por Five9 Inc.
+              </p>
+            </article>
+          </div>
+          <div class="section-closing">
+            <p>
+              Estos reconocimientos reflejan nuestro compromiso con la
+              implementación de operaciones CX modernas, eficientes y orientadas
+              a resultados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. FAQS -->
+      <section class="faq-section">
+        <div class="container">
+          <header class="section-header">
+            <span class="kicker">Soporte & Respuestas</span>
+            <h2>Preguntas frecuentes sobre Five9</h2>
+          </header>
+          <div class="faq-accordion">
+            <details class="faq-item">
+              <summary>¿Qué es Five9? <span class="faq-icon">↓</span></summary>
+              <p>
+                Five9 es una plataforma CCaaS que integra omnicanalidad,
+                inteligencia artificial, automatización, analytics y workforce
+                optimization para operaciones de Contact Center enterprise.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                ¿Qué canales soporta Five9? <span class="faq-icon">↓</span>
+              </summary>
+              <p>
+                Five9 permite gestionar voz, chat, email, SMS y canales
+                digitales desde una sola plataforma omnicanal.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                ¿Five9 incluye inteligencia artificial?
+                <span class="faq-icon">↓</span>
+              </summary>
+              <p>
+                Sí. Five9 integra IVAs, Agent Assist, Analytics, Genius AI y
+                automatización conversacional.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                ¿Five9 se integra con CRM? <span class="faq-icon">↓</span>
+              </summary>
+              <p>
+                Sí. Five9 cuenta con integraciones nativas con Salesforce,
+                HubSpot, Microsoft Dynamics, Odoo y otros sistemas
+                empresariales.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                ¿Qué beneficios operativos ofrece Five9?
+                <span class="faq-icon">↓</span>
+              </summary>
+              <p>
+                Five9 ayuda a reducir AHT, automatizar interacciones, mejorar
+                productividad y optimizar la experiencia del cliente.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                ¿Por qué implementar Five9 con ICQ24?
+                <span class="faq-icon">↓</span>
+              </summary>
+              <p>
+                ICQ24 diseña modelos operativos completos sobre Five9, alineando
+                tecnología, procesos y experiencia del cliente para asegurar
+                impacto real en el negocio.
+              </p>
+            </details>
+          </div>
+          <div class="faq-escape text-center">
+            <p>
+              ¿Tienes alguna otra duda sobre la compatibilidad o implementación?
+              → <a href="#">Habla con un especialista</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Cierre Wrapper -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. FAQ Exclusividad
+        const faqs = document.querySelectorAll(".faq-item");
+        faqs.forEach((faq) => {
+          faq.addEventListener("toggle", () => {
+            if (faq.open) {
+              faqs.forEach((other) => {
+                if (other !== faq) other.removeAttribute("open");
+              });
+            }
+          });
+        });
+
+        // 2. Carousel Interactivo (Cómo Trabaja)
+        const track = document.querySelector(
+          ".interactive-carousel .carousel-track",
+        );
+        const prevBtn = document.querySelector(".carousel-control.prev");
+        const nextBtn = document.querySelector(".carousel-control.next");
+        const dots = document.querySelectorAll(".carousel-pagination .dot");
+
+        if (track && prevBtn && nextBtn) {
+          const getScroll = () => {
+            const card = track.querySelector(".carousel-card");
+            return card
+              ? card.offsetWidth + parseFloat(getComputedStyle(track).gap || 0)
+              : 0;
+          };
+
+          nextBtn.addEventListener("click", () =>
+            track.scrollBy({ left: getScroll(), behavior: "smooth" }),
+          );
+          prevBtn.addEventListener("click", () =>
+            track.scrollBy({ left: -getScroll(), behavior: "smooth" }),
+          );
+
+          track.addEventListener(
+            "scroll",
+            () => {
+              const idx = Math.round(track.scrollLeft / getScroll());
+              dots.forEach((d) => d.classList.remove("active"));
+              if (dots[idx]) dots[idx].classList.add("active");
+            },
+            { passive: true },
+          );
+        }
+
+        // 3. Ecosistema Infinito Loop Seamless
+        const scrollTrack = document.querySelector(
+          ".infinite-scroll-carousel .scroll-track",
+        );
+        if (scrollTrack) {
+          scrollTrack.innerHTML += scrollTrack.innerHTML;
+        }
+
+        // 4. Industrias Drag to Scroll
+        const indCar = document.querySelector(".industries-carousel");
+        let isDown = false,
+          startX,
+          sLeft;
+        if (indCar) {
+          indCar.addEventListener("mousedown", (e) => {
+            isDown = true;
+            startX = e.pageX - indCar.offsetLeft;
+            sLeft = indCar.scrollLeft;
+          });
+          indCar.addEventListener("mouseleave", () => (isDown = false));
+          indCar.addEventListener("mouseup", () => (isDown = false));
+          indCar.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - indCar.offsetLeft;
+            indCar.scrollLeft = sLeft - (x - startX) * 2;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

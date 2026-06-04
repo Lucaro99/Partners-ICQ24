@@ -1,0 +1,3114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Five9 Cloud Contact Center | ICQ24 – Plataforma Inteligente para tu
+      Operación
+    </title>
+    <meta
+      name="description"
+      content="Five9 unifica CX, IA, automatización, workforce optimization y analytics en una sola plataforma cloud enterprise. Descubre cómo ICQ24 transforma tu Contact Center."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* ==========================================================================
+         RESET & BASE
+         ========================================================================== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #ffffff;
+        color: #1e293b;
+        font-size: 15px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ==========================================================================
+         DESIGN SYSTEM – ICQ24 / FIVE9 THEME (CSS Variables)
+         ========================================================================== */
+      :root {
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --brand-primary-mid: #1d4ed8;
+        --navy: #0a192f;
+        --navy-dark: #0b132b;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-card: #f9fafb;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        --shadow-lg:
+          0 10px 25px -3px rgba(0, 0, 0, 0.07),
+          0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        --shadow-xl:
+          0 20px 40px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --shadow-card: 0 4px 20px rgba(2, 99, 226, 0.1);
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-xl: 28px;
+        --radius-pill: 9999px;
+
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-12: 48px;
+        --space-16: 64px;
+        --space-24: 96px;
+      }
+
+      /* ==========================================================================
+         ANIMATIONS (single definition)
+         ========================================================================== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      @keyframes scrollLeft {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes scrollIndustrias {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-50% - 10px));
+        }
+      }
+      .animate-fade {
+        animation: fadeUp 0.6s ease both;
+      }
+
+      /* ==========================================================================
+         SHARED COMPONENTS
+         ========================================================================== */
+
+      /* ── Eyebrow ──────────────────────────────────────────── */
+      .eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-light);
+        margin-bottom: 14px;
+      }
+
+      /* ── Buttons ──────────────────────────────────────────── */
+      .btn-primary,
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 32px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: var(--radius-pill);
+        cursor: pointer;
+        border: 2px solid transparent;
+        text-decoration: none;
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--brand-primary);
+        color: var(--text-inverse);
+      }
+      .btn-primary:hover {
+        background: var(--brand-primary-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--text-main);
+        border-color: var(--border-light);
+      }
+      .btn-secondary:hover {
+        border-color: var(--brand-primary);
+        color: var(--brand-primary);
+        background: var(--brand-primary-light);
+        transform: translateY(-2px);
+      }
+      .btn-white {
+        background: var(--text-inverse);
+        color: var(--brand-primary);
+        border-color: var(--text-inverse);
+      }
+      .btn-white:hover {
+        background: var(--brand-primary-light);
+        transform: translateY(-2px);
+      }
+
+      /* ── Section Layout ──────────────────────────────────── */
+      .section-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-bottom: 48px;
+        padding: 0 48px;
+      }
+      .section-center {
+        text-align: center;
+      }
+      .section-h2 {
+        font-size: clamp(30px, 3.5vw, 42px);
+        font-weight: 800;
+        color: var(--text-main);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+      .section-h2 .accent {
+        color: var(--brand-primary);
+      }
+      .section-lead {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.75;
+        max-width: 680px;
+        margin: 0 auto 40px;
+        font-weight: 400;
+      }
+
+      /* ==========================================================================
+         HERO SECTION
+         ========================================================================== */
+      .hero {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)),
+          url("TU_IMAGEN_DE_FONDO.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 100px 48px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 0%,
+          rgba(2, 99, 226, 0.08) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .hero-content {
+        text-align: left;
+      }
+      .hero-eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        animation: fadeUp 0.5s ease both;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 800;
+        color: var(--text-main);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 28px;
+        animation: fadeUp 0.55s 0.1s ease both;
+      }
+      .hero h1 .accent,
+      .hero h1 .italic {
+        color: var(--brand-primary);
+      }
+      .hero-desc {
+        font-size: 17px;
+        color: var(--text-muted);
+        line-height: 1.75;
+        margin-bottom: 36px;
+        font-weight: 400;
+        animation: fadeUp 0.55s 0.2s ease both;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        animation: fadeUp 0.55s 0.3s ease both;
+      }
+      .hero-mockup {
+        position: relative;
+        width: 100%;
+        animation: fadeUp 0.7s 0.4s ease both;
+      }
+      .hero-mockup img {
+        width: 100%;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        box-shadow:
+          var(--shadow-xl),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
+        display: block;
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          black 70%,
+          transparent 100%
+        );
+      }
+
+      /* ==========================================================================
+         RETOS DE NEGOCIO
+         ========================================================================== */
+      .retos-section {
+        background: var(--bg-white);
+      }
+      .retos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .reto-card {
+        background: var(--bg-light);
+        border-radius: var(--radius-md);
+        padding: 24px 32px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid transparent;
+        position: relative;
+        transition: all 0.4s ease;
+      }
+      .reto-card:hover {
+        background: var(--text-inverse);
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-6px);
+        scale: 1.03;
+      }
+      .reto-num {
+        font-size: 32px;
+        font-weight: 900;
+        color: var(--brand-primary);
+        line-height: 1;
+      }
+      .reto-card h3 {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--bg-dark-elevated);
+        line-height: 1.5;
+        margin: 0;
+      }
+      .retos-impact {
+        background: var(--bg-dark);
+        padding: 30px 100px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .retos-impact p {
+        font-size: 20px;
+        color: var(--text-inverse);
+        line-height: 1.7;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      .retos-impact p strong {
+        color: var(--text-inverse);
+      }
+
+      /* ==========================================================================
+   QUÉ ES FIVE9 - SECCIÓN PRINCIPAL
+   ========================================================================== */
+      .que-es-section {
+        padding: 80px 0;
+        background: var(--bg-light, #f8f9fa);
+        overflow: hidden;
+      }
+
+      .que-es-header {
+        text-align: center;
+        margin-bottom: 56px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .que-es-header h2 {
+        font-size: clamp(28px, 3vw, 42px);
+        font-weight: 800;
+        color: var(--text-main, #1a1a1a);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .que-es-header h2 .accent {
+        color: var(--brand-primary, #0056b3);
+      }
+      .que-es-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+      .que-es-visual {
+        position: relative;
+      }
+
+      .que-es-img-main {
+        border-radius: var(--radius-xl, 16px);
+        box-shadow: var(--shadow-xl, 0 20px 40px rgba(0, 0, 0, 0.1));
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+      }
+
+      .que-es-img-main img {
+        width: 100%;
+        display: block;
+      }
+
+      .que-es-img-behind {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 75%;
+        border-radius: var(--radius-lg, 12px);
+        background: var(--bg-dark, #111);
+        box-shadow: var(--shadow-xl, 0 20px 40px rgba(0, 0, 0, 0.2));
+        z-index: 1;
+        overflow: hidden;
+        filter: blur(2px);
+        opacity: 0.7;
+      }
+
+      .que-es-img-behind img {
+        width: 100%;
+        display: block;
+        opacity: 0.6;
+      }
+      .que-es-text p {
+        font-size: 16px;
+        color: var(--text-muted, #555);
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+      .que-es-text .que-es-connector {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-main, #1a1a1a);
+        margin-bottom: 0;
+      }
+      .carousel-container {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        position: relative;
+        margin-bottom: 40px;
+        display: flex;
+      }
+      .carousel-container::before,
+      .carousel-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .carousel-container::before {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          var(--bg-light, #f8f9fa) 0%,
+          transparent 100%
+        );
+      }
+      .carousel-container::after {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          var(--bg-light, #f8f9fa) 0%,
+          transparent 100%
+        );
+      }
+      .carousel-track {
+        display: flex;
+        gap: 24px;
+        padding: 0px 0;
+        width: max-content;
+        animation: scrollInfinito 35s linear infinite;
+      }
+      .carousel-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes scrollInfinito {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .cap-card {
+        background: #ffffff;
+        border: 1px solid #eaeaea;
+        padding: 20px 32px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        white-space: nowrap;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .cap-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .cap-icon {
+        font-size: 20px;
+        color: var(--brand-primary, #0056b3);
+      }
+
+      .cap-card span {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--text-main, #1a1a1a);
+      }
+
+      .que-es-footer {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .que-es-close {
+        font-size: 15px;
+        color: var(--text-muted, #555);
+        margin-bottom: 24px;
+        font-weight: 500;
+      }
+
+      @media (max-width: 992px) {
+        .que-es-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .que-es-header h2 {
+          font-size: 32px;
+        }
+        .carousel-container::before,
+        .carousel-container::after {
+          width: 60px;
+        }
+      }
+
+      /* ==========================================================================
+         CÓMO TRABAJA (CAROUSEL)
+         ========================================================================== */
+      .como-trabaja-section {
+        padding: 30px 0;
+        background: var(--bg-white);
+      }
+      .como-trabaja-track {
+        flex: 1;
+        overflow: visible;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        animation: none;
+      }
+      .carousel-card {
+        box-shadow: var(--shadow-xl);
+        display: none;
+        background: var(--bg-light);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-xl);
+        padding: 52px 60px;
+        animation: fadeUp 0.4s ease both;
+        position: relative;
+        max-width: 700px;
+      }
+      .carousel-card.active {
+        display: block;
+      }
+      .carousel-card,
+      .carousel-card h3,
+      .carousel-card p,
+      .card-category,
+      .card-icon {
+        transition: all 0.3s ease;
+      }
+      .carousel-card:hover {
+        background: var(--bg-dark);
+        border-color: var(--bg-dark);
+      }
+      .carousel-card:hover h3,
+      .carousel-card:hover p,
+      .carousel-card:hover .card-category {
+        color: var(--text-inverse);
+      }
+      .carousel-card:hover .card-icon {
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--text-inverse);
+      }
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(2, 99, 226, 0.1);
+        color: var(--brand-primary);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 24px;
+      }
+      .card-category {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text-light);
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+      }
+      .carousel-card h3 {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 20px;
+        letter-spacing: -0.02em;
+      }
+      .carousel-card p {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.75;
+        margin-bottom: 0;
+        max-width: 600px;
+      }
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--brand-primary);
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        transition: gap 0.2s;
+      }
+      .card-link:hover {
+        gap: 12px;
+      }
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 28px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .dot.active {
+        background: var(--bg-dark);
+        width: 24px;
+        border-radius: 4px;
+      }
+
+      /* ==========================================================================
+         ECOSISTEMA (CARRUSEL MANUAL)
+         ========================================================================== */
+      .ecosistema-section {
+        padding: 96px 0;
+        background: var(--bg-light);
+        overflow: hidden;
+      }
+      .eco-carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 56px;
+        position: relative;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 24px;
+      }
+      .eco-carousel-view {
+        overflow: hidden;
+        width: 100%;
+        max-width: 900px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-xl);
+      }
+      .eco-scroll-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .eco-card {
+        min-width: 100%;
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 48px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .eco-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: var(--radius-sm);
+        background: rgba(2, 99, 226, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-primary);
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .eco-card h3 {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 12px;
+      }
+      .eco-card p {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .eco-btn {
+        margin-top: auto;
+        padding: 10px 24px;
+        background: transparent;
+        color: var(--brand-primary);
+        border: 1px solid var(--brand-primary);
+        border-radius: var(--radius-pill);
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+      .eco-btn:hover {
+        background: var(--brand-primary);
+        color: var(--text-inverse);
+        box-shadow: 0 4px 12px rgba(2, 99, 226, 0.3);
+      }
+      .eco-arrow {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        color: var(--text-main);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        flex-shrink: 0;
+      }
+      .eco-arrow:hover {
+        background: var(--brand-primary);
+        color: var(--text-inverse);
+        border-color: var(--brand-primary);
+      }
+      .eco-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 32px;
+      }
+      .eco-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .eco-dot.active {
+        background: var(--brand-primary);
+        width: 32px;
+        border-radius: 6px;
+      }
+
+      /* ==========================================================================
+         POR QUÉ FIVE9 – COMPARISON TABLE
+         ========================================================================== */
+      .porque-section {
+        padding: 30px 0 0 0;
+        background: var(--bg-white);
+      }
+      .compare-table {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 0;
+        margin-top: 64px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+      }
+      .compare-col.col-trad {
+        background: var(--bg-light);
+        border: 1px solid var(--border-light);
+        border-right: none;
+        border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        padding: 40px 32px;
+        color: var(--text-light);
+      }
+      .col-trad .compare-col-header {
+        padding: 0 0 24px 0;
+        border-bottom: none;
+        background: transparent;
+        text-align: center;
+      }
+      .col-trad .compare-col-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #64748b;
+        letter-spacing: normal;
+      }
+      .col-trad .compare-row {
+        display: flex;
+        align-items: center;
+        padding: 20px 16px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        font-size: 15px;
+        color: var(--text-light);
+        background: transparent;
+      }
+      .col-trad .compare-row:last-child {
+        border-bottom: none;
+      }
+      .compare-col.col-five9 {
+        background: var(--bg-white);
+        border-radius: 24px;
+        padding: 48px 40px;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+        position: relative;
+        z-index: 2;
+        border: 1px solid rgba(2, 99, 226, 0.1);
+      }
+      .col-five9 .compare-col-header {
+        padding: 0 0 32px 0;
+        border-bottom: none;
+        background: transparent;
+        text-align: center;
+      }
+      .col-five9 .compare-col-title {
+        font-size: 24px;
+        color: var(--text-main);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .col-five9 .compare-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 24px;
+        border-bottom: 1px solid #f1f5f9;
+        color: var(--bg-dark-elevated);
+        font-size: 15px;
+        font-weight: 600;
+        background: transparent;
+        border-radius: var(--radius-sm);
+        transition: all 0.2s ease;
+      }
+      .col-five9 .compare-row:last-child {
+        border-bottom: none;
+      }
+      .col-five9 .compare-row:hover {
+        background: #f0f6ff;
+        transform: translateX(5px);
+      }
+      .check-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        color: var(--text-inverse);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(2, 99, 226, 0.3);
+      }
+
+      /* ==========================================================================
+         ESCENARIOS DE USO (Carrusel de Tarjetas)
+         ========================================================================== */
+      .escenarios-section {
+        padding: 30px 0;
+        background: var(--bg-light);
+      }
+      .esc-slider-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .esc-window {
+        overflow: hidden;
+        width: 100%;
+        padding: 10px 0;
+      }
+      .esc-track {
+        display: flex;
+        gap: 24px;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .esc-card {
+        flex: 0 0 calc(33.333% - 16px);
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        transition: all 0.25s ease;
+      }
+      .esc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(2, 99, 226, 0.08);
+        border-color: rgba(2, 99, 226, 0.2);
+      }
+      .esc-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(2, 99, 226, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: var(--brand-primary);
+        margin-bottom: 20px;
+      }
+      .esc-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .esc-content .esc-kicker {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        margin-bottom: 8px;
+      }
+      .esc-content h3 {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+      .esc-content h3 .accent {
+        color: var(--brand-primary);
+      }
+      .esc-content p {
+        font-size: 14px;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .esc-link {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--brand-primary);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: gap 0.2s;
+      }
+      .esc-link:hover {
+        gap: 10px;
+      }
+      .esc-arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        color: var(--text-main);
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: all 0.2s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      .esc-arrow:hover {
+        background: var(--brand-primary);
+        color: var(--text-inverse);
+        border-color: var(--brand-primary);
+      }
+      .esc-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 32px;
+      }
+      .esc-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .esc-dot.active {
+        background: var(--brand-primary);
+        width: 24px;
+        border-radius: 4px;
+      }
+      .escenarios-cta {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      /* ==========================================================================
+         INDUSTRIAS (DARK SECTION)
+         ========================================================================== */
+      .industrias-section {
+        padding: 30px 0;
+        background: var(--navy-dark);
+        overflow: hidden;
+      }
+      .industrias-section .eyebrow {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .industrias-section .section-h2 {
+        color: var(--text-inverse);
+      }
+      .industrias-section .section-h2 .accent {
+        color: var(--brand-primary);
+      }
+      .industrias-scroll {
+        overflow: hidden;
+        position: relative;
+        margin-top: 56px;
+      }
+      .industrias-scroll::before,
+      .industrias-scroll::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 80px;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .industrias-scroll::before {
+        left: 0;
+        background: linear-gradient(to right, var(--navy-dark), transparent);
+      }
+      .industrias-scroll::after {
+        right: 0;
+        background: linear-gradient(to left, var(--navy-dark), transparent);
+      }
+      .industrias-track {
+        display: flex;
+        gap: 20px;
+        width: max-content;
+        padding: 10px 0 20px;
+        animation: scrollIndustrias 25s linear infinite;
+      }
+      .industrias-track:hover {
+        animation-play-state: paused;
+      }
+      .industria-card {
+        background: var(--bg-white);
+        border-radius: var(--radius-xl);
+        padding: 36px 28px;
+        width: 260px;
+        flex-shrink: 0;
+        text-align: center;
+        box-shadow: var(--shadow-xl);
+        transition: transform 0.25s;
+        cursor: default;
+      }
+      .industria-card:hover {
+        transform: translateY(-6px);
+      }
+      .ind-icon-wrap {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 22px;
+        color: var(--text-inverse);
+      }
+      .industria-card h3 {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .industria-card p {
+        font-size: 12px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .industrias-close {
+        text-align: center;
+        margin-top: 52px;
+      }
+      .industrias-close p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 32px;
+      }
+      .industrias-close p strong {
+        color: var(--text-inverse);
+        font-weight: 800;
+      }
+
+      /* ==========================================================================
+         IMPACTOS AL NEGOCIO
+         ========================================================================== */
+      .impactos-section {
+        padding: 30px 0;
+        background: var(--bg-white);
+      }
+      .impactos-cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .impacto-card {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        padding: 40px 32px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        display: flex;
+        flex-direction: column;
+      }
+      .impacto-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(2, 99, 226, 0.12);
+        border-color: rgba(2, 99, 226, 0.3);
+      }
+      .impacto-card h3 {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        line-height: 1.3;
+      }
+      .impacto-card h3 i {
+        color: var(--brand-primary);
+        font-size: 24px;
+        background: rgba(2, 99, 226, 0.1);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-md);
+      }
+      .pill-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        border-radius: var(--radius-pill);
+        font-size: 12.5px;
+        font-weight: 600;
+        background: var(--bg-light);
+        color: var(--text-main);
+        border: 1px solid rgba(2, 99, 226, 0.15);
+        transition: background 0.2s;
+      }
+      .impacto-card:hover .pill {
+        background: rgba(2, 99, 226, 0.1);
+      }
+      .impactos-close {
+        margin-top: 64px;
+        text-align: center;
+      }
+      .impactos-close p {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 24px;
+      }
+
+      /* ==========================================================================
+         RESULTADOS MEDIBLES
+         ========================================================================== */
+      .resultados-section {
+        padding: 96px 0;
+        background: var(--bg-light);
+      }
+      .resultados-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: start;
+        margin-top: 56px;
+      }
+      .resultados-visual img {
+        width: 100%;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        display: block;
+      }
+
+      /* ── Results Mockup (extracted from inline styles) ─── */
+      .results-mockup {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-xl);
+      }
+      .results-mockup-title {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+      }
+      .results-chart-container {
+        position: relative;
+        height: 180px;
+        margin-bottom: 20px;
+      }
+      .results-metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .results-metric {
+        background: var(--bg-light);
+        border-radius: 10px;
+        padding: 12px;
+        border: 1px solid var(--border-light);
+      }
+      .results-metric-label {
+        font-size: 9px;
+        color: var(--text-light);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .results-metric-value {
+        font-size: 20px;
+        font-weight: 900;
+      }
+      .results-metric-value--blue {
+        color: var(--brand-primary);
+      }
+      .results-metric-value--green {
+        color: var(--green);
+      }
+
+      /* ── KPIs ────────────────────────────────────────────── */
+      .kpis-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .kpi-card {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 24px 20px;
+        transition: all 0.25s;
+      }
+      .kpi-card:hover {
+        border-color: rgba(2, 99, 226, 0.2);
+        box-shadow: var(--shadow-card);
+        transform: translateY(-3px);
+      }
+      .kpi-value {
+        font-size: 25px;
+        font-weight: 800;
+        color: var(--brand-primary);
+        line-height: 1;
+        margin-bottom: 8px;
+        letter-spacing: -0.03em;
+      }
+      .kpi-desc {
+        font-size: 12.5px;
+        color: var(--text-muted);
+        line-height: 1.55;
+      }
+      .resultados-close {
+        margin-top: 56px;
+        text-align: center;
+      }
+      .resultados-close p {
+        font-size: 17px;
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 720px;
+        margin: 0 auto 32px;
+        font-weight: 500;
+      }
+      .resultados-close p strong {
+        color: var(--text-main);
+        font-weight: 800;
+      }
+
+      /* ==========================================================================
+         POR QUÉ ICQ24
+         ========================================================================== */
+      .icq24-section {
+        padding: 30px 0;
+        background: var(--bg-white);
+      }
+      .icq24-desc {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.75;
+        max-width: 720px;
+        margin: 0 auto 52px;
+        text-align: center;
+      }
+      .diferenciales-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto 56px;
+      }
+      .dif-capsule {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-pill);
+        padding: 16px 32px 16px 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        width: calc(50% - 10px);
+        min-width: 320px;
+      }
+      .dif-capsule:hover {
+        border-color: rgba(2, 99, 226, 0.25);
+        box-shadow: var(--shadow-card);
+        transform: translateY(4px);
+      }
+      .dif-icon-box {
+        width: 48px;
+        height: 48px;
+        background: var(--brand-primary-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-primary);
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .dif-text {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-main);
+        line-height: 1.3;
+        flex: 1;
+        text-align: left;
+      }
+      .dif-num {
+        font-size: 28px;
+        font-weight: 900;
+        color: rgba(2, 99, 226, 0.12);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .icq24-close {
+        text-align: center;
+      }
+
+      /* ==========================================================================
+         RECONOCIMIENTOS (Dark Theme)
+         ========================================================================== */
+      .reconocimientos-section {
+        padding: 96px 0;
+        background: var(--bg-dark);
+      }
+      .reconocimientos-section .eyebrow {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .reconocimientos-section .section-h2 {
+        color: var(--text-inverse);
+      }
+      .reconocimientos-section .section-h2 .accent,
+      .reconocimientos-section .section-h2 .italic {
+        color: #60a5fa;
+      }
+      .premios-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        max-width: 760px;
+        margin: 48px auto 0;
+      }
+      .premio-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-xl);
+        padding: 40px 32px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.25s ease;
+      }
+      .premio-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(96, 165, 250, 0.3);
+      }
+      .premio-icon {
+        font-size: 40px;
+        color: #60a5fa;
+        margin-bottom: 20px;
+        display: block;
+      }
+      .premio-card h3 {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--text-inverse);
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      .premio-card .subtext {
+        font-size: 12px;
+        color: var(--text-light);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+      .reconocimientos-close {
+        text-align: center;
+        max-width: 700px;
+        margin: 36px auto 0;
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.7;
+      }
+
+      /* ==========================================================================
+         FAQS
+         ========================================================================== */
+      .faqs-section {
+        padding: 96px 0;
+        background: var(--bg-white);
+      }
+      .faqs-list {
+        max-width: 820px;
+        margin: 52px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .faq-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition: box-shadow 0.2s;
+      }
+      .faq-item.open {
+        background: var(--bg-white);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(2, 99, 226, 0.15);
+      }
+      .faq-q {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 22px 28px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .faq-q-text {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text-main);
+        line-height: 1.4;
+      }
+      .faq-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--bg-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        flex-shrink: 0;
+        transition: all 0.3s;
+        font-size: 13px;
+      }
+      .faq-item.open .faq-icon {
+        background: var(--brand-primary-light);
+        color: var(--brand-primary);
+        transform: rotate(180deg);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .faq-item.open .faq-a {
+        max-height: 400px;
+      }
+      .faq-a-inner {
+        padding: 0 28px 24px 28px;
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.75;
+      }
+      .faq-escape {
+        text-align: center;
+        margin-top: 36px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .faq-escape a {
+        color: var(--brand-primary);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .faq-escape a:hover {
+        text-decoration: underline;
+      }
+
+      /* ==========================================================================
+         RESPONSIVE – ALL MEDIA QUERIES CONSOLIDATED
+         ========================================================================== */
+      @media (max-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .hero-content {
+          text-align: center;
+        }
+        .hero-btns {
+          justify-content: center;
+        }
+        .retos-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .que-es-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .resultados-grid {
+          grid-template-columns: 1fr;
+        }
+        .diferenciales-row {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 960px) {
+        .impactos-cards-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .compare-table {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .compare-col.col-trad {
+          border-radius: var(--radius-lg);
+          border-right: 1px solid var(--border-light);
+          padding: 32px 24px;
+        }
+        .compare-col.col-five9 {
+          padding: 32px 24px;
+        }
+        .esc-card {
+          flex: 0 0 calc(50% - 12px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 72px 24px 0;
+        }
+        .section-wrap {
+          padding: 0 24px;
+        }
+        .retos-grid {
+          grid-template-columns: 1fr;
+        }
+        .retos-impact {
+          padding: 28px 24px;
+        }
+        .premios-grid {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+        }
+        .diferenciales-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .kpis-grid {
+          grid-template-columns: 1fr;
+        }
+        .que-es-img-behind {
+          display: none;
+        }
+        .capabilities-grid {
+          grid-template-columns: 1fr;
+        }
+        .dif-capsule {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .carousel-card {
+          padding: 32px 24px;
+        }
+        .diferenciales-row {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-btns {
+          flex-direction: column;
+          align-items: center;
+        }
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+          max-width: 300px;
+        }
+        .eco-carousel-wrapper {
+          gap: 12px;
+          padding: 0 16px;
+        }
+        .eco-arrow {
+          width: 36px;
+          height: 36px;
+          font-size: 14px;
+        }
+        .premios-grid {
+          gap: 16px;
+        }
+        .impactos-cards-container {
+          grid-template-columns: 1fr;
+        }
+        .impacto-card {
+          padding: 32px 24px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .esc-slider-container {
+          gap: 12px;
+        }
+        .esc-card {
+          flex: 0 0 100%;
+        }
+        .esc-arrow {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══ HERO ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="section-wrap hero-grid">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Five9 Cloud Contact Center Platform</span>
+          <h1>
+            La plataforma inteligente que transforma tu Contact Center en una
+            <span class="italic">
+              operación eficiente, automatizada y escalable.</span
+            >
+          </h1>
+          <p class="hero-desc">
+            El Contact Center moderno ya no se trata solo de atender llamadas.
+            Las organizaciones necesitan operaciones capaces de integrar
+            canales, automatizar interacciones, optimizar agentes y tomar
+            decisiones basadas en datos en tiempo real. Five9 unifica CX, IA,
+            automatización, workforce optimization y analytics en una sola
+            plataforma cloud diseñada para operaciones enterprise.
+          </p>
+          <div class="hero-btns" id="hero-cta">
+            <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+              <i class="fa-solid fa-calendar-check"></i> Agenda una demo
+              personalizada
+            </a>
+            <a href="#que-es" class="btn-secondary">
+              Descubre cómo transformar tu operación &nbsp;→
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-mockup">
+          <img
+            src="https://raw.githubusercontent.com/Lucaro99/Politica-de-Privacidad-ICQ24/main/Assets/Persona%20iconos_meta_3.webp"
+            alt="Five9 Platform Interface"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ RETOS DE NEGOCIO ═════════════════════════════════════ -->
+    <section class="retos-section" id="retos">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Retos de negocio</span>
+          <h2 class="section-h2">
+            Cuando la operación crece,
+            <span class="accent">la complejidad también.</span>
+          </h2>
+          <p class="section-lead">
+            Muchas organizaciones siguen operando con
+            <strong
+              >herramientas desconectadas, procesos manuales y poca visibilidad
+              operativa</strong
+            >, generando:
+          </p>
+        </div>
+
+        <div class="retos-grid">
+          <div class="reto-card">
+            <div class="reto-num">01</div>
+            <h3>Altos tiempos de espera y AHT elevado.</h3>
+          </div>
+          <div class="reto-card">
+            <div class="reto-num">02</div>
+            <h3>Agentes sin contexto completo del cliente.</h3>
+          </div>
+          <div class="reto-card">
+            <div class="reto-num">03</div>
+            <h3>Costos operativos crecientes.</h3>
+          </div>
+          <div class="reto-card">
+            <div class="reto-num">04</div>
+            <h3>Dificultad para escalar en picos de demanda.</h3>
+          </div>
+          <div class="reto-card">
+            <div class="reto-num">05</div>
+            <h3>Experiencias inconsistentes entre canales.</h3>
+          </div>
+          <div class="reto-card">
+            <div class="reto-num">06</div>
+            <h3>Baja automatización y exceso de tareas repetitivas.</h3>
+          </div>
+          <div class="reto-card" style="grid-column: 2">
+            <div class="reto-num">07</div>
+            <h3>Falta de métricas accionables en tiempo real.</h3>
+          </div>
+        </div>
+      </div>
+      <div class="retos-impact">
+        <p>
+          El problema no es el volumen de interacciones.
+          <strong
+            >Es operar sin una plataforma que conecte experiencia,
+            automatización y datos en un mismo modelo operativo.</strong
+          >
+        </p>
+      </div>
+    </section>
+
+    <section class="que-es-section">
+      <div
+        class="container"
+        style="max-width: 1200px; margin: 0 auto; padding: 0 20px"
+      >
+        <div
+          class="que-es-header"
+          style="text-align: center; margin-bottom: 56px"
+        >
+          <span class="eyebrow">Soluciones Enterprise</span>
+          <h2>
+            Five9: el <span class="accent">sistema operativo de CX</span> para
+            empresas modernas.
+          </h2>
+        </div>
+
+        <div class="que-es-grid">
+          <div class="que-es-visual">
+            <div class="que-es-img-behind">
+              <img src="PON_AQUI_TU_IMAGEN_DE_SOMBRA.png" alt="" />
+            </div>
+            <div class="que-es-img-main">
+              <img
+                src="PON_AQUI_LA_URL_DEL_DASHBOARD_OSCURO.png"
+                alt="Five9 Interface"
+              />
+            </div>
+          </div>
+
+          <div class="que-es-text">
+            <p>
+              Five9 es la plataforma CCaaS (Contact Center as a Service) líder
+              diseñada para centralizar y orquestar todas las interacciones del
+              cliente desde una arquitectura cloud segura, flexible y preparada
+              para operaciones enterprise.
+            </p>
+            <p class="que-es-connector">
+              Más que una solución de Contact Center, Five9 funciona como un
+              ecosistema inteligente que conecta:
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="cap-card">
+              <div class="cap-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <span>Omnicanalidad</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-brain"></i></div>
+              <span>Inteligencia Artificial</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-gears"></i></div>
+              <span>Automatización</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-users-gear"></i></div>
+              <span>Workforce Optimization</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <span>Analytics</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-plug"></i></div>
+              <span>Integraciones CRM</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span>Seguridad Enterprise</span>
+            </div>
+
+            <div class="cap-card">
+              <div class="cap-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <span>Omnicanalidad</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-brain"></i></div>
+              <span>Inteligencia Artificial</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-gears"></i></div>
+              <span>Automatización</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-users-gear"></i></div>
+              <span>Workforce Optimization</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <span>Analytics</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon"><i class="fa-solid fa-plug"></i></div>
+              <span>Integraciones CRM</span>
+            </div>
+            <div class="cap-card">
+              <div class="cap-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span>Seguridad Enterprise</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="que-es-footer">
+          <p class="que-es-close">
+            Todo desde una sola plataforma escalable y completamente medible.
+          </p>
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            Explora las capacidades de Five9 &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ══ CÓMO TRABAJA FIVE9 ════════════════════════════════════ -->
+    <section class="como-trabaja-section" id="como-trabaja">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Cómo trabaja Five9</span>
+          <h2 class="section-h2">
+            Cómo Five9 transforma la operación del Contact Center.
+          </h2>
+          <p class="section-lead">
+            Un modelo operativo diseñado para automatizar, optimizar y escalar.
+          </p>
+        </div>
+
+        <div class="como-trabaja-track" id="como-trabaja-track">
+          <div class="carousel-card active" data-index="0">
+            <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+            <p class="card-category">Gestión de Canales</p>
+            <h3>Omnicanalidad unificada</h3>
+            <p>
+              Gestiona voz, chat, email, SMS y canales digitales desde una sola
+              plataforma. Tus agentes operan con una visión 360° del cliente sin
+              importar por qué canal llegue la interacción, garantizando
+              continuidad de contexto y experiencias consistentes en cada punto
+              de contacto.
+            </p>
+          </div>
+
+          <div class="carousel-card" data-index="1">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <p class="card-category">Inteligencia Artificial</p>
+            <h3>IA aplicada al CX</h3>
+            <p>
+              Automatiza conversaciones, asiste agentes y optimiza decisiones
+              operativas en tiempo real. Five9 integra IVAs, Agent Assist y
+              Genius AI para reducir carga operativa, mejorar la calidad de
+              atención y escalar la capacidad sin aumentar headcount.
+            </p>
+          </div>
+
+          <div class="carousel-card" data-index="2">
+            <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <p class="card-category">Gestión de Talento</p>
+            <h3>Workforce Optimization</h3>
+            <p>
+              Forecasting, calidad, monitoreo y desempeño alineados a
+              productividad y SLAs. Five9 WFO te permite planificar capacidad,
+              evaluar calidad en tiempo real, hacer coaching basado en datos y
+              mantener el desempeño de tu operación siempre al nivel que el
+              negocio requiere.
+            </p>
+          </div>
+
+          <div class="carousel-card" data-index="3">
+            <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+            <p class="card-category">Automatización</p>
+            <h3>Automatización inteligente</h3>
+            <p>
+              Reduce tareas repetitivas y optimiza campañas outbound con IA y
+              marcación predictiva. Five9 automatiza flujos de trabajo,
+              enrutamiento inteligente y procesos operativos, liberando a tus
+              agentes para enfocarse en interacciones de mayor valor y
+              complejidad.
+            </p>
+          </div>
+
+          <div class="carousel-card" data-index="4">
+            <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <p class="card-category">Datos & Decisiones</p>
+            <h3>Analytics & Insights</h3>
+            <p>
+              Convierte conversaciones y métricas operativas en decisiones
+              accionables. Five9 Analytics transforma datos de voz, chat y
+              canales digitales en reportes en tiempo real e históricos que
+              permiten a la dirección y operación actuar con visibilidad total
+              del negocio.
+            </p>
+          </div>
+
+          <div class="carousel-card" data-index="5">
+            <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+            <p class="card-category">Ecosistema</p>
+            <h3>Integraciones CRM</h3>
+            <p>
+              Conecta Five9 con Salesforce, HubSpot, Microsoft Dynamics, Odoo y
+              otros sistemas empresariales. Las integraciones nativas y vía API
+              permiten unificar datos del cliente, automatizar flujos entre
+              sistemas y operar con contexto completo en cada interacción.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-dots">
+          <div class="dot active" onclick="goToSlide(0)"></div>
+          <div class="dot" onclick="goToSlide(1)"></div>
+          <div class="dot" onclick="goToSlide(2)"></div>
+          <div class="dot" onclick="goToSlide(3)"></div>
+          <div class="dot" onclick="goToSlide(4)"></div>
+          <div class="dot" onclick="goToSlide(5)"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ECOSISTEMA FIVE9 ══════════════════════════════════════ -->
+    <section class="ecosistema-section" id="ecosistema">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Ecosistema Five9</span>
+          <h2 class="section-h2">
+            Un ecosistema <span class="accent">completo</span> para modernizar
+            CX y operaciones.
+          </h2>
+          <p class="section-lead">
+            Módulos integrados nativamente en una sola arquitectura cloud que se
+            adapta a la escala y complejidad de tu operación.
+          </p>
+        </div>
+      </div>
+
+      <div class="eco-carousel-wrapper">
+        <button class="eco-arrow prev" onclick="moveEcoCarousel(-1)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="eco-carousel-view" id="eco-view">
+          <div class="eco-scroll-track" id="eco-track">
+            <div class="eco-card">
+              <div class="eco-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <h3>Five9 Omnicanal</h3>
+              <p>
+                Experiencias conectadas y consistentes en todos los canales.
+              </p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon"><i class="fa-solid fa-comments"></i></div>
+              <h3>Five9 IVAs</h3>
+              <p>
+                Automatización conversacional con IA de voz y canales digitales.
+              </p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon"><i class="fa-solid fa-headset"></i></div>
+              <h3>Five9 Agent Assist</h3>
+              <p>Asistencia inteligente en tiempo real para agentes.</p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Five9 Genius AI</h3>
+              <p>
+                IA generativa y agéntica para automatizar y optimizar
+                decisiones.
+              </p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <h3>Five9 Analytics</h3>
+              <p>Insights accionables desde voz y canales digitales.</p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon"><i class="fa-solid fa-users"></i></div>
+              <h3>Workforce Optimization</h3>
+              <p>Control total de productividad, calidad y desempeño.</p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon">
+                <i class="fa-solid fa-phone-arrow-up-right"></i>
+              </div>
+              <h3>Predictive Dialer</h3>
+              <p>
+                Mayor productividad outbound y mejor utilización del agente.
+              </p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+
+            <div class="eco-card">
+              <div class="eco-icon">
+                <i class="fa-solid fa-puzzle-piece"></i>
+              </div>
+              <h3>CRM Integrations</h3>
+              <p>
+                Datos y contexto unificados para operar con visibilidad
+                completa.
+              </p>
+              <a href="#" class="eco-btn">Descubre más</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="eco-arrow next" onclick="moveEcoCarousel(1)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="eco-dots" id="eco-dots"></div>
+    </section>
+
+    <!-- ══ POR QUÉ FIVE9 ═════════════════════════════════════════ -->
+    <section class="porque-section" id="porque-five9">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">¿Por qué Five9?</span>
+          <h2 class="section-h2">
+            Las operaciones tradicionales
+            <span class="italic">ya no escalan</span> al ritmo del negocio.
+          </h2>
+        </div>
+
+        <div class="compare-table">
+          <!-- LEFT: Traditional -->
+          <div class="compare-col col-trad">
+            <div class="compare-col-header">
+              <div class="compare-col-title">Modelos tradicionales</div>
+            </div>
+            <div class="compare-row">Herramientas aisladas</div>
+            <div class="compare-row">Procesos manuales</div>
+            <div class="compare-row">Baja visibilidad operacional</div>
+            <div class="compare-row">Escalabilidad limitada</div>
+            <div class="compare-row">Experiencias inconsistentes</div>
+            <div class="compare-row">Datos fragmentados</div>
+            <div class="compare-row">Reacción operativa tardía</div>
+          </div>
+
+          <!-- RIGHT: Five9 -->
+          <div class="compare-col col-five9">
+            <div class="compare-col-header">
+              <div class="compare-col-title">Five9 Cloud CX Platform</div>
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              Ecosistema unificado
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              IA + automatización integrada
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              Analytics y monitoreo en tiempo real
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              Arquitectura cloud enterprise
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              Omnicanalidad conectada
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              Contexto unificado del cliente
+            </div>
+            <div class="compare-row">
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              Decisiones basadas en IA e insights
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="retos-impact">
+        <p>
+          Las expectativas del cliente evolucionan más rápido que los modelos
+          tradicionales de atención.
+          <strong
+            >Five9 permite modernizar CX sin aumentar complejidad
+            operacional.</strong
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ ESCENARIOS DE USO ══════════════════════════════════════ -->
+    <section class="escenarios-section" id="escenarios">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Escenarios de Uso Five9</span>
+          <h2 class="section-h2">
+            Cómo Five9 impacta <span class="accent">escenarios reales</span> de
+            operación.
+          </h2>
+        </div>
+
+        <div class="esc-slider-container">
+          <button class="esc-arrow prev" onclick="moveEscSlider(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="esc-window">
+            <div class="esc-track" id="esc-track-cards">
+              <div class="esc-card">
+                <div class="esc-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="esc-content">
+                  <div class="esc-kicker">Mejor eficiencia operativa</div>
+                  <h3>
+                    <span class="accent">Reducir saturación</span> en servicio
+                  </h3>
+                  <p>
+                    Automatiza contactos repetitivos con IA conversacional y
+                    libera capacidad operativa para casos de mayor valor.
+                  </p>
+                  <a
+                    href="https://www.icq24.com"
+                    target="_blank"
+                    class="esc-link"
+                  >
+                    Explorar <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="esc-card">
+                <div class="esc-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div class="esc-content">
+                  <div class="esc-kicker">Optimización Outbound</div>
+                  <h3>
+                    <span class="accent">Mejorar productividad</span> en
+                    cobranza
+                  </h3>
+                  <p>
+                    Marcación predictiva y analytics para aumentar
+                    conversaciones efectivas y reducir tiempo muerto.
+                  </p>
+                  <a
+                    href="https://www.icq24.com"
+                    target="_blank"
+                    class="esc-link"
+                  >
+                    Explorar <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="esc-card">
+                <div class="esc-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div class="esc-content">
+                  <div class="esc-kicker">Optimización de Canales</div>
+                  <h3><span class="accent">Escalar soporte</span> omnicanal</h3>
+                  <p>
+                    Centraliza canales y automatiza resolución manteniendo
+                    continuidad de contexto en cada interacción.
+                  </p>
+                  <a
+                    href="https://www.icq24.com"
+                    target="_blank"
+                    class="esc-link"
+                  >
+                    Explorar <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="esc-card">
+                <div class="esc-icon"><i class="fa-solid fa-trophy"></i></div>
+                <div class="esc-content">
+                  <div class="esc-kicker">Calidad Operativa</div>
+                  <h3>
+                    <span class="accent">Optimizar calidad</span> y desempeño
+                  </h3>
+                  <p>
+                    WFO y Analytics conectados para mejorar SLAs, coaching y
+                    productividad de forma continua.
+                  </p>
+                  <a
+                    href="https://www.icq24.com"
+                    target="_blank"
+                    class="esc-link"
+                  >
+                    Explorar <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="esc-card">
+                <div class="esc-icon"><i class="fa-solid fa-database"></i></div>
+                <div class="esc-content">
+                  <div class="esc-kicker">Visibilidad del Cliente</div>
+                  <h3>
+                    <span class="accent">Unificar CX y datos</span> del cliente
+                  </h3>
+                  <p>
+                    Integraciones CRM + voz + analytics para operar con
+                    visibilidad completa del customer journey.
+                  </p>
+                  <a
+                    href="https://www.icq24.com"
+                    target="_blank"
+                    class="esc-link"
+                  >
+                    Explorar <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="esc-arrow next" onclick="moveEscSlider(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="esc-dots" id="esc-dots-container"></div>
+        <div class="escenarios-cta">
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Explora cómo
+            Five9 se adapta a tu operación &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ INDUSTRIAS ════════════════════════════════════════════ -->
+    <section class="industrias-section" id="industrias">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Industrias</span>
+          <h2 class="section-h2">
+            Five9 impulsa operaciones donde la experiencia y la eficiencia
+            <span class="accent">no pueden fallar.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="industrias-scroll">
+        <div class="industrias-track">
+          <!-- SET 1 (Original) -->
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h3>Banca y servicios financieros</h3>
+            <p>
+              Automatización segura, cumplimiento y atención de alto volumen.
+            </p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h3>Retail y Ecommerce</h3>
+            <p>
+              Omnicanalidad, autoservicio y escalabilidad para operaciones
+              dinámicas.
+            </p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-tower-broadcast"></i>
+            </div>
+            <h3>Telecomunicaciones</h3>
+            <p>
+              Mayor productividad y reducción de costos en operaciones masivas.
+            </p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-hospital"></i>
+            </div>
+            <h3>Salud</h3>
+            <p>Experiencias ágiles y seguras para operaciones críticas.</p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h3>BPO y Outsourcing</h3>
+            <p>Escalabilidad, control de SLAs y eficiencia operacional.</p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Seguros</h3>
+            <p>Atención omnicanal y automatización de procesos de servicio.</p>
+          </div>
+
+          <!-- SET 2 (Clonado para efecto de scroll infinito) -->
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h3>Banca y servicios financieros</h3>
+            <p>
+              Automatización segura, cumplimiento y atención de alto volumen.
+            </p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h3>Retail y Ecommerce</h3>
+            <p>
+              Omnicanalidad, autoservicio y escalabilidad para operaciones
+              dinámicas.
+            </p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-tower-broadcast"></i>
+            </div>
+            <h3>Telecomunicaciones</h3>
+            <p>
+              Mayor productividad y reducción de costos en operaciones masivas.
+            </p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-hospital"></i>
+            </div>
+            <h3>Salud</h3>
+            <p>Experiencias ágiles y seguras para operaciones críticas.</p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h3>BPO y Outsourcing</h3>
+            <p>Escalabilidad, control de SLAs y eficiencia operacional.</p>
+          </div>
+          <div class="industria-card">
+            <div class="ind-icon-wrap">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Seguros</h3>
+            <p>Atención omnicanal y automatización de procesos de servicio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-wrap">
+        <div class="industrias-close">
+          <p>
+            <strong>Cada operación tiene retos distintos.</strong>
+            La solución no debería ser estándar.
+          </p>
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            <i class="fa-solid fa-microscope"></i> Solicita diagnóstico
+            personalizado &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ IMPACTOS AL NEGOCIO ═══════════════════════════════════ -->
+    <section class="impactos-section" id="impactos">
+      <div class="section-wrap">
+        <div class="section-center" style="margin-bottom: 48px">
+          <span class="eyebrow">Impactos al negocio</span>
+          <h2 class="section-h2">
+            <span class="accent">Más que tecnología:</span>
+            impacto real en CX, Operaciones y Dirección.
+          </h2>
+          <p class="section-lead" style="max-width: 700px; margin: 0 auto">
+            Logra mejoras medibles implementando la plataforma líder con la
+            metodología y experiencia certificada de ICQ24.
+          </p>
+        </div>
+
+        <div class="impactos-cards-container">
+          <div class="impacto-card">
+            <h3><i class="fa-solid fa-star"></i> Experiencia del Cliente</h3>
+            <div class="pill-group">
+              <span class="pill">Canales Coherentes</span>
+              <span class="pill">Menor Tiempo de Respuesta</span>
+              <span class="pill">Incremento en CSAT y FCR</span>
+              <span class="pill">Atención 24/7</span>
+            </div>
+          </div>
+
+          <div class="impacto-card">
+            <h3><i class="fa-solid fa-gears"></i> Operación</h3>
+            <div class="pill-group">
+              <span class="pill">Reducción de Costo por Contacto</span>
+              <span class="pill">+ Productividad por Agente</span>
+              <span class="pill">Automatización de Tareas</span>
+              <span class="pill">Escalabilidad Simple</span>
+            </div>
+          </div>
+
+          <div class="impacto-card">
+            <h3><i class="fa-solid fa-sitemap"></i> Dirección e IT</h3>
+            <div class="pill-group">
+              <span class="pill">Arquitectura Cloud Segura</span>
+              <span class="pill">Visibilidad End-to-End</span>
+              <span class="pill">Integración Simplificada</span>
+              <span class="pill">Previsibilidad del Negocio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="impactos-close">
+          <p>¿Buscas resultados que optimicen tu operación?</p>
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            <i class="fa-solid fa-calendar-days"></i> Agenda una DEMO con un
+            experto &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ RESULTADOS MEDIBLES ═══════════════════════════════════ -->
+    <section class="resultados-section" id="resultados">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Resultados de Impacto · Métricas Cloud</span>
+          <h2 class="section-h2">
+            Resultados medibles cuando CX, IA y automatización trabajan como
+            <span class="accent">un solo modelo operativo.</span>
+          </h2>
+        </div>
+
+        <div class="resultados-grid">
+          <!-- LEFT: Visual -->
+          <div class="resultados-visual">
+            <div class="results-mockup">
+              <div class="results-mockup-title">
+                Performance Analytics · Real-Time
+              </div>
+              <div class="results-chart-container">
+                <svg viewBox="0 0 300 150" style="width: 100%; height: 100%">
+                  <defs>
+                    <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop
+                        offset="0%"
+                        stop-color="#0263e2"
+                        stop-opacity="0.2"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="#0263e2"
+                        stop-opacity="0"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,130 Q30,120 60,100 T120,70 T180,40 T240,20 T300,5"
+                    fill="none"
+                    stroke="#0263e2"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M0,130 Q30,120 60,100 T120,70 T180,40 T240,20 T300,5 L300,150 L0,150 Z"
+                    fill="url(#lineGrad)"
+                  />
+                  <circle cx="300" cy="5" r="4" fill="#0263e2" />
+                </svg>
+              </div>
+              <div class="results-metrics-grid">
+                <div class="results-metric">
+                  <div class="results-metric-label">Cost per Contact</div>
+                  <div class="results-metric-value results-metric-value--blue">
+                    ↓ 35%
+                  </div>
+                </div>
+                <div class="results-metric">
+                  <div class="results-metric-label">Self-Service Rate</div>
+                  <div class="results-metric-value results-metric-value--green">
+                    ↑ 58%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: KPI grid -->
+          <div class="kpis-grid">
+            <div class="kpi-card">
+              <div class="kpi-value">-30%</div>
+              <div class="kpi-desc">
+                Reducción potencial en el AHT (Average Handling Time).
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">+ Adopción</div>
+              <div class="kpi-desc">
+                Mayor migración hacia autoservicio eficiente e IA
+                conversacional.
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">+ Productividad</div>
+              <div class="kpi-desc">
+                Optimización del desempeño y mayor capacidad operativa por
+                agente.
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">- Costos</div>
+              <div class="kpi-desc">
+                Disminución del costo operativo por contacto mediante
+                automatización masiva.
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">100% Conectado</div>
+              <div class="kpi-desc">
+                Consistencia absoluta entre canales, flujos de datos y equipos
+                de atención.
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-value">Escalabilidad</div>
+              <div class="kpi-desc">
+                Crecimiento transaccional fluido sin necesidad de aumentar el
+                headcount de forma proporcional.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="resultados-close">
+          <p>
+            <strong>Five9 no solo soporta la operación.</strong> La convierte en
+            una operación inteligente, automatizada y preparada para
+            evolucionar.
+          </p>
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            Descubre cuánto puede optimizar Five9 tu operación &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ POR QUÉ ICQ24 ═════════════════════════════════════════ -->
+    <section class="icq24-section" id="icq24">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">ICQ24 + Five9</span>
+          <h2 class="section-h2">
+            Más que implementación: una estrategia completa de
+            <span class="italic accent">transformación operacional.</span>
+          </h2>
+        </div>
+
+        <p class="icq24-desc">
+          En ICQ24 no solo implementamos tecnología. Diseñamos modelos
+          operativos sobre Five9 alineando automatización, IA, analytics,
+          workforce y customer experience para asegurar impacto real en
+          productividad, control y escalabilidad.
+        </p>
+
+        <div class="diferenciales-row">
+          <div class="dif-capsule">
+            <div class="dif-icon-box"><i class="fa-solid fa-star"></i></div>
+            <div class="dif-text">Especialistas en CX enterprise</div>
+            <div class="dif-num">01</div>
+          </div>
+          <div class="dif-capsule">
+            <div class="dif-icon-box"><i class="fa-solid fa-robot"></i></div>
+            <div class="dif-text">Experiencia en automatización y AI</div>
+            <div class="dif-num">02</div>
+          </div>
+          <div class="dif-capsule">
+            <div class="dif-icon-box"><i class="fa-solid fa-plug"></i></div>
+            <div class="dif-text">
+              Integración con ecosistemas empresariales
+            </div>
+            <div class="dif-num">03</div>
+          </div>
+          <div class="dif-capsule">
+            <div class="dif-icon-box">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div class="dif-text">Acompañamiento estratégico y operativo</div>
+            <div class="dif-num">04</div>
+          </div>
+          <div class="dif-capsule">
+            <div class="dif-icon-box">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="dif-text">Partner reconocido por Five9</div>
+            <div class="dif-num">05</div>
+          </div>
+        </div>
+
+        <div class="icq24-close">
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            <i class="fa-solid fa-calendar-check"></i> Agenda una demo
+            personalizada &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ RECONOCIMIENTOS ═══════════════════════════════════════ -->
+    <section class="reconocimientos-section" id="reconocimientos">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Premios & Credenciales</span>
+          <h2 class="section-h2">
+            Reconocidos por Five9 por <span class="accent">excelencia</span> y
+            resultados.
+          </h2>
+        </div>
+
+        <div class="premios-grid">
+          <div class="premio-card">
+            <i class="fa-solid fa-medal premio-icon"></i>
+            <h3>Global Partner Award 2023</h3>
+            <p class="subtext">Otorgado oficialmente por Five9 Inc.</p>
+          </div>
+          <div class="premio-card">
+            <i class="fa-solid fa-trophy premio-icon"></i>
+            <h3>Partner de Excelencia Five9 2025</h3>
+            <p class="subtext">Otorgado oficialmente por Five9 Inc.</p>
+          </div>
+        </div>
+
+        <p class="reconocimientos-close">
+          Estos reconocimientos reflejan nuestro compromiso con la
+          implementación de operaciones CX modernas, eficientes y orientadas a
+          resultados.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ FAQS ══════════════════════════════════════════════════ -->
+    <section class="faqs-section" id="faqs">
+      <div class="section-wrap">
+        <div class="section-center">
+          <span class="eyebrow">Soporte & Respuestas</span>
+          <h2 class="section-h2">Preguntas frecuentes sobre Five9</h2>
+        </div>
+
+        <div class="faqs-list">
+          <div class="faq-item open" id="faq1">
+            <div class="faq-q" onclick="toggleFaq('faq1')">
+              <span class="faq-q-text">¿Qué es Five9?</span>
+              <div class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Five9 es una plataforma CCaaS que integra omnicanalidad,
+                inteligencia artificial, automatización, analytics y workforce
+                optimization para operaciones de Contact Center enterprise.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq2">
+            <div class="faq-q" onclick="toggleFaq('faq2')">
+              <span class="faq-q-text">¿Qué canales soporta Five9?</span>
+              <div class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Five9 permite gestionar voz, chat, email, SMS y canales
+                digitales desde una sola plataforma omnicanal.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq3">
+            <div class="faq-q" onclick="toggleFaq('faq3')">
+              <span class="faq-q-text"
+                >¿Five9 incluye inteligencia artificial?</span
+              >
+              <div class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Sí. Five9 integra IVAs, Agent Assist, Analytics, Genius AI y
+                automatización conversacional.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq4">
+            <div class="faq-q" onclick="toggleFaq('faq4')">
+              <span class="faq-q-text">¿Five9 se integra con CRM?</span>
+              <div class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Sí. Five9 cuenta con integraciones nativas con Salesforce,
+                HubSpot, Microsoft Dynamics, Odoo y otros sistemas
+                empresariales.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq5">
+            <div class="faq-q" onclick="toggleFaq('faq5')">
+              <span class="faq-q-text"
+                >¿Qué beneficios operativos ofrece Five9?</span
+              >
+              <div class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Five9 ayuda a reducir AHT, automatizar interacciones, mejorar
+                productividad y optimizar la experiencia del cliente.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq6">
+            <div class="faq-q" onclick="toggleFaq('faq6')">
+              <span class="faq-q-text"
+                >¿Por qué implementar Five9 con ICQ24?</span
+              >
+              <div class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                ICQ24 diseña modelos operativos completos sobre Five9, alineando
+                tecnología, procesos y experiencia del cliente para asegurar
+                impacto real en el negocio.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="faq-escape">
+          ¿Tienes alguna otra duda sobre la compatibilidad o implementación?
+        </p>
+        <br />
+        <div class="icq24-close">
+          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+            <i class="fa-solid fa-calendar-check"></i> Habla con un especialista
+            &nbsp;→
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ══════════════════════════════════════════════════════════
+        // CAROUSEL AUTOPLAY (Cómo trabaja Five9)
+        // ══════════════════════════════════════════════════════════
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const slideInterval = 4000;
+        let autoplayTimer;
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        }
+
+        window.goToSlide = function (idx) {
+          currentSlide = idx;
+          updateCarousel();
+          resetAutoplay();
+        };
+
+        function updateCarousel() {
+          document.querySelectorAll(".carousel-card").forEach((card, i) => {
+            card.classList.toggle("active", i === currentSlide);
+          });
+          document.querySelectorAll(".carousel-dots .dot").forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentSlide);
+          });
+        }
+
+        function startAutoplay() {
+          autoplayTimer = setInterval(nextSlide, slideInterval);
+        }
+
+        function resetAutoplay() {
+          clearInterval(autoplayTimer);
+          startAutoplay();
+        }
+
+        startAutoplay();
+
+        // ══════════════════════════════════════════════════════════
+        // CARRUSEL MANUAL "ECOSISTEMA"
+        // ══════════════════════════════════════════════════════════
+        let currentEcoSlide = 0;
+        const ecoCards = document.querySelectorAll(".eco-card");
+        const totalEcoSlides = ecoCards.length;
+        const ecoTrack = document.getElementById("eco-track");
+        const ecoDotsContainer = document.getElementById("eco-dots");
+
+        // Generar dots dinámicamente
+        if (ecoDotsContainer && totalEcoSlides > 0) {
+          for (let i = 0; i < totalEcoSlides; i++) {
+            const dot = document.createElement("div");
+            dot.className = `eco-dot ${i === 0 ? "active" : ""}`;
+            dot.onclick = () => goToEcoSlide(i);
+            ecoDotsContainer.appendChild(dot);
+          }
+        }
+
+        function updateEcoCarousel() {
+          if (ecoTrack) {
+            ecoTrack.style.transform = `translateX(-${currentEcoSlide * 100}%)`;
+          }
+          document.querySelectorAll(".eco-dot").forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentEcoSlide);
+          });
+        }
+
+        window.moveEcoCarousel = function (dir) {
+          currentEcoSlide =
+            (currentEcoSlide + dir + totalEcoSlides) % totalEcoSlides;
+          updateEcoCarousel();
+        };
+
+        function goToEcoSlide(idx) {
+          currentEcoSlide = idx;
+          updateEcoCarousel();
+        }
+
+        // ══════════════════════════════════════════════════════════
+        // CARRUSEL "ESCENARIOS" (Tarjetas Múltiples)
+        // ══════════════════════════════════════════════════════════
+        let currentEscIndex = 0;
+        const escTrackCards = document.getElementById("esc-track-cards");
+        const escCards = document.querySelectorAll(".esc-card");
+        const escDotsContainerCards =
+          document.getElementById("esc-dots-container");
+        const totalEscCards = escCards.length;
+
+        function getCardsPerView() {
+          if (window.innerWidth > 900) return 3;
+          if (window.innerWidth > 600) return 2;
+          return 1;
+        }
+
+        function initEscDots() {
+          if (!escDotsContainerCards) return;
+          escDotsContainerCards.innerHTML = "";
+          const maxIndex = totalEscCards - getCardsPerView();
+          const dotsCount = maxIndex >= 0 ? maxIndex + 1 : 1;
+
+          for (let i = 0; i < dotsCount; i++) {
+            const dot = document.createElement("div");
+            dot.className = `esc-dot ${i === 0 ? "active" : ""}`;
+            dot.onclick = () => goToEscSlide(i);
+            escDotsContainerCards.appendChild(dot);
+          }
+        }
+
+        function updateEscSlider() {
+          const cardsPerView = getCardsPerView();
+          const maxIndex = Math.max(0, totalEscCards - cardsPerView);
+
+          if (currentEscIndex > maxIndex) currentEscIndex = maxIndex;
+          if (currentEscIndex < 0) currentEscIndex = 0;
+
+          const cardWidthPercentage = 100 / cardsPerView;
+          if (escTrackCards) {
+            escTrackCards.style.transform = `translateX(-${currentEscIndex * cardWidthPercentage}%)`;
+          }
+
+          document.querySelectorAll(".esc-dot").forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentEscIndex);
+          });
+        }
+
+        window.moveEscSlider = function (dir) {
+          const maxIndex = Math.max(0, totalEscCards - getCardsPerView());
+          currentEscIndex += dir;
+          if (currentEscIndex > maxIndex) currentEscIndex = 0;
+          if (currentEscIndex < 0) currentEscIndex = maxIndex;
+          updateEscSlider();
+        };
+
+        function goToEscSlide(idx) {
+          currentEscIndex = idx;
+          updateEscSlider();
+        }
+
+        window.addEventListener("resize", () => {
+          initEscDots();
+          updateEscSlider();
+        });
+
+        initEscDots();
+        updateEscSlider();
+
+        // ══════════════════════════════════════════════════════════
+        // FAQ ACCORDION
+        // ══════════════════════════════════════════════════════════
+        window.toggleFaq = function (id) {
+          const item = document.getElementById(id);
+          const isOpen = item.classList.contains("open");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((f) => f.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        };
+
+        // ══════════════════════════════════════════════════════════
+        // SCROLL-REVEAL
+        // ══════════════════════════════════════════════════════════
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(
+            ".reto-card, .kpi-card, .dif-capsule, .premio-card, .faq-item, .compare-row",
+          )
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(16px)";
+            el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            revealObserver.observe(el);
+          });
+      });
+    </script>
+  </body>
+</html>
