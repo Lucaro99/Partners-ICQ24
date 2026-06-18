@@ -160,6 +160,10 @@
       html {
         scroll-behavior: smooth;
       }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
       body {
         font-family: "Montserrat", sans-serif;
         background: #ffffff;
@@ -304,7 +308,8 @@
           background-color 0.3s ease,
           color 0.3s ease,
           border-color 0.3s ease;
-        white-space: nowrap;
+        white-space: normal;
+        text-align: center;
       }
       .btn-primary {
         background: var(--brand-primary);
@@ -340,8 +345,8 @@
       .section-wrap {
         max-width: 1200px;
         margin: 0 auto;
-        margin-bottom: 48px;
-        padding: 0 48px;
+        margin-bottom: 70px;
+        padding: 0;
       }
       .section-center {
         text-align: center;
@@ -372,7 +377,7 @@
          HERO SECTION
          ========================================================================== */
       .hero {
-        padding-top: 120px !important;
+        padding-top: 80px !important;
         background: linear-gradient(
           rgba(255, 255, 255, 0.9),
           rgba(255, 255, 255, 0.95)
@@ -390,14 +395,18 @@
         pointer-events: none;
       }
       .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        max-width: 1400px;
+        max-width: 1000px;
         margin: 0 auto;
+        gap: 40px;
       }
       .hero-content {
-        text-align: left;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .hero-eyebrow {
         display: inline-block;
@@ -434,24 +443,29 @@
       .hero-btns {
         display: flex;
         gap: 16px;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
-        margin-bottom: 60px;
+        margin-bottom: 10px;
         animation: fadeUp 0.55s 0.3s ease both;
       }
-
+      .hero-mockup {
+        width: 100%;
+        height: auto;
+        margin-bottom: -22%;
+      }
       .hero-mockup img {
         width: 100%;
+        transform: scale(1.2);
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         box-shadow:
           var(--shadow-xl),
           0 0 0 1px rgba(0, 0, 0, 0.04);
         display: block;
-        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 25%, transparent 60%);
         -webkit-mask-image: linear-gradient(
           to bottom,
-          black 70%,
-          transparent 100%
+          black 25%,
+          transparent 60%
         );
       }
 
@@ -460,6 +474,9 @@
          ========================================================================== */
       .retos-section {
         background: var(--bg-white);
+        position: relative;
+        padding: 40px 0 0 0;
+        z-index: 10;
       }
       .retos-grid {
         display: grid;
@@ -524,7 +541,7 @@
    QUÉ ES FIVE9 - SECCIÓN PRINCIPAL
    ========================================================================== */
       .que-es-section {
-        padding: 80px 0;
+        padding: 80px 0 80px 0;
         background: var(--bg-light, #f8f9fa);
         overflow: hidden;
       }
@@ -609,6 +626,7 @@
         position: relative;
         margin-bottom: 40px;
         display: flex;
+        overflow: hidden;
       }
       .carousel-container::before,
       .carousel-container::after {
@@ -639,7 +657,7 @@
       .carousel-track {
         display: flex;
         gap: 24px;
-        padding: 0px 0;
+        padding: 0;
         width: max-content;
         animation: scrollInfinito 35s linear infinite;
       }
@@ -702,25 +720,11 @@
         font-weight: 500;
       }
 
-      @media (max-width: 992px) {
-        .que-es-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .que-es-header h2 {
-          font-size: 32px;
-        }
-        .carousel-container::before,
-        .carousel-container::after {
-          width: 60px;
-        }
-      }
-
       /* ==========================================================================
          CÓMO TRABAJA (CAROUSEL)
          ========================================================================== */
       .como-trabaja-section {
-        padding: 30px 0;
+        padding: 80px 0 40px 0;
         background:
           linear-gradient(
             to bottom,
@@ -847,7 +851,7 @@
          ECOSISTEMA (CARRUSEL MANUAL)
          ========================================================================== */
       .ecosistema-section {
-        padding: 96px 0;
+        padding: 80px 0 80px 0;
         background: var(--bg-light);
         overflow: hidden;
       }
@@ -973,7 +977,7 @@
          POR QUÉ FIVE9 – COMPARISON TABLE
          ========================================================================== */
       .porque-section {
-        padding: 30px 0 0 0;
+        padding: 50px 0 0 0;
         background: var(--bg-white);
       }
       .compare-table {
@@ -1077,7 +1081,7 @@
          ESCENARIOS DE USO (Carrusel de Tarjetas)
          ========================================================================== */
       .escenarios-section {
-        padding: 30px 0;
+        padding: 80px 0 0 0;
         background: var(--bg-light);
       }
       .esc-slider-container {
@@ -1212,7 +1216,7 @@
         border-radius: 4px;
       }
       .escenarios-cta {
-        margin-top: 10px;
+        margin-top: 40px;
         text-align: center;
       }
 
@@ -1220,7 +1224,7 @@
          INDUSTRIAS (DARK SECTION)
          ========================================================================== */
       .industrias-section {
-        padding: 30px 0;
+        padding: 80px 0 0 0;
         background: var(--navy-dark);
         overflow: hidden;
       }
@@ -1310,7 +1314,7 @@
       }
       .industrias-close {
         text-align: center;
-        margin-top: 52px;
+        margin: 52px 0 50px 0;
       }
       .industrias-close p {
         font-family: montserrat !important;
@@ -1328,7 +1332,7 @@
          IMPACTOS AL NEGOCIO
          ========================================================================== */
       .impactos-section {
-        padding: 30px 0;
+        padding: 80px 0 0 0;
         background: var(--bg-white);
       }
       .impactos-cards-container {
@@ -1410,7 +1414,7 @@
          RESULTADOS MEDIBLES
          ========================================================================== */
       .resultados-section {
-        padding: 96px 0;
+        padding: 80px 0 15px 0;
         background: var(--bg-light);
       }
       .resultados-grid {
@@ -1420,8 +1424,33 @@
         align-items: start;
         margin-top: 56px;
       }
-      .resultados-visual img {
+
+      .results-mockup-wrapper {
+        position: relative;
         width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .card-front {
+        position: relative;
+        z-index: 2;
+        transform: translateY(40px);
+      }
+
+      .card-back {
+        position: absolute;
+        top: 70px;
+        left: -80px;
+        z-index: 1;
+        filter: blur(4px);
+        opacity: 0.6;
+        transform: scale(0.9);
+      }
+
+      .results-card img {
+        width: 100%;
+        display: block;
       }
 
       /* ── KPIs ────────────────────────────────────────────── */
@@ -1477,7 +1506,7 @@
          POR QUÉ ICQ24
          ========================================================================== */
       .icq24-section {
-        padding: 30px 0;
+        padding: 80px 0 15px 0;
         background: var(--bg-white);
       }
       .icq24-desc {
@@ -1550,7 +1579,7 @@
          RECONOCIMIENTOS (Dark Theme)
          ========================================================================== */
       .reconocimientos-section {
-        padding: 96px 0;
+        padding: 80px 0 40px 0;
         background: var(--bg-dark);
       }
       .reconocimientos-section .eyebrow {
@@ -1562,7 +1591,7 @@
       }
       .reconocimientos-section .section-h2 .accent,
       .reconocimientos-section .section-h2 .italic {
-        color: #60a5fa;
+        color: var(--brand-primary);
       }
       .premios-grid {
         display: grid;
@@ -1588,7 +1617,7 @@
       }
       .premio-icon {
         font-size: 40px;
-        color: #60a5fa;
+        color: var(--brand-primary);
         margin-bottom: 20px;
         display: block;
       }
@@ -1619,7 +1648,7 @@
          FAQS
          ========================================================================== */
       .faqs-section {
-        padding: 96px 0;
+        padding: 75px 0;
         background:
           linear-gradient(
             to bottom,
@@ -1732,6 +1761,9 @@
         .hero-btns {
           justify-content: center;
         }
+        .hero-mockup {
+          width: 100%;
+        }
         .retos-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -1743,7 +1775,23 @@
           grid-template-columns: 1fr;
         }
         .diferenciales-row {
-          grid-template-columns: repeat(3, 1fr);
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        .dif-capsule {
+          width: 100%;
+          min-width: unset;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .que-es-header h2 {
+          font-size: 32px;
+        }
+        .carousel-container::before,
+        .carousel-container::after {
+          width: 60px;
         }
       }
 
@@ -1773,13 +1821,15 @@
 
       @media (max-width: 768px) {
         .hero {
-          padding: 72px 24px 0;
+          padding: 72px 24px 0 !important;
         }
         .section-wrap {
           padding: 0 24px;
         }
         .retos-grid {
-          grid-template-columns: 1fr;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
         }
         .retos-impact {
           padding: 28px 24px;
@@ -1787,9 +1837,8 @@
         .premios-grid {
           grid-template-columns: 1fr;
           max-width: 400px;
-        }
-        .diferenciales-row {
-          grid-template-columns: repeat(2, 1fr);
+          margin-left: auto;
+          margin-right: auto;
         }
         .kpis-grid {
           grid-template-columns: 1fr;
@@ -1797,20 +1846,14 @@
         .que-es-img-behind {
           display: none;
         }
-        .capabilities-grid {
+        .diferenciales-row {
           grid-template-columns: 1fr;
-        }
-        .dif-capsule {
-          width: 100%;
         }
       }
 
       @media (max-width: 640px) {
         .carousel-card {
           padding: 32px 24px;
-        }
-        .diferenciales-row {
-          grid-template-columns: 1fr 1fr;
         }
         .hero-btns {
           flex-direction: column;
@@ -1878,14 +1921,14 @@
           <div class="hero-btns" id="hero-cta">
             <a
               href="https://www.icq24.com/contactus"
-              target="_blank"
+              target="_self"
               class="btn-primary"
             >
               <i class="fa-solid fa-calendar-check"></i> Agenda una demo
               personalizada
             </a>
             <a href="#que-es" class="btn-secondary">
-              Descubre cómo transformar tu operación &nbsp;→
+              Conoce todas las capacidades de Five9 &nbsp;→
             </a>
           </div>
         </div>
@@ -1943,7 +1986,7 @@
             <div class="reto-num">06</div>
             <h3>Baja automatización y exceso de tareas repetitivas.</h3>
           </div>
-          <div class="reto-card" style="grid-column: 2">
+          <div class="reto-card">
             <div class="reto-num">07</div>
             <h3>Falta de métricas accionables en tiempo real.</h3>
           </div>
@@ -1960,7 +2003,9 @@
       </div>
     </section>
 
-    <section class="que-es-section">
+    <!-- ══ SOLUCIONES ENTERPRISE ══════════════════════════════════════ -->
+
+    <section class="que-es-section" id="que-es">
       <div
         class="container"
         style="max-width: 1200px; margin: 0 auto; padding: 0 20px"
@@ -2077,10 +2122,10 @@
           </p>
           <a
             href="https://www.icq24.com/contactus"
-            target="_blank"
+            target="_self"
             class="btn-primary"
           >
-            Explora las capacidades de Five9 &nbsp;→
+            Transforma tu Operación con Five9 &nbsp;→
           </a>
         </div>
       </div>
@@ -2275,7 +2320,7 @@
 
             <div class="eco-card">
               <div class="eco-icon">
-                <i class="fa-solid fa-phone-arrow-up-right"></i>
+                <i class="fa-solid fa-phone"></i>
               </div>
               <h3>Predictive Dialer</h3>
               <p>
@@ -2490,7 +2535,7 @@
         <div class="escenarios-cta">
           <a
             href="https://www.icq24.com/contactus"
-            target="_blank"
+            target="_self"
             class="btn-primary"
           >
             <i class="fa-solid fa-arrow-right-to-bracket"></i> Explora cómo
@@ -2626,7 +2671,7 @@
           </p>
           <a
             href="https://www.icq24.com/contactus"
-            target="_blank"
+            target="_self"
             class="btn-primary"
           >
             <i class="fa-solid fa-microscope"></i> Solicita diagnóstico
@@ -2687,11 +2732,10 @@
           <p>¿Buscas resultados que optimicen tu operación?</p>
           <a
             href="https://www.icq24.com/contactus"
-            target="_blank"
+            target="_self"
             class="btn-primary"
           >
-            <i class="fa-solid fa-calendar-days"></i> Agenda una DEMO con un
-            experto &nbsp;→
+            <i class="fa-solid fa-calendar-days"></i> Agenda una DEMO &nbsp;→
           </a>
         </div>
       </div>
@@ -2711,12 +2755,19 @@
         <div class="resultados-grid">
           <!-- LEFT: Visual -->
           <div class="resultados-visual">
-            <div class="results-mockup">
-              <div class="results-chart-container">
+            <div class="results-mockup-wrapper">
+              <!-- Tarjeta de fondo (desenfocada) -->
+              <div class="results-card card-back">
                 <img
                   src="https://github.com/Lucaro99/Partners-ICQ24/blob/main/Assets/Muckup%20(1).png?raw=true"
-                  alt="Mockup Rediseño ICQ24"
-                  width="800"
+                  alt="Mockup Background"
+                />
+              </div>
+              <!-- Tarjeta principal (nítida y al frente) -->
+              <div class="results-card card-front">
+                <img
+                  src="https://github.com/Lucaro99/Partners-ICQ24/blob/main/Assets/Muckup%20(1).png?raw=true"
+                  alt="Mockup Foreground"
                 />
               </div>
             </div>
@@ -2776,7 +2827,7 @@
           </p>
           <a
             href="https://www.icq24.com/contactus"
-            target="_blank"
+            target="_self"
             class="btn-primary"
           >
             Descubre cuánto puede optimizar Five9 tu operación &nbsp;→
@@ -2838,7 +2889,11 @@
         </div>
 
         <div class="icq24-close">
-          <a href="https://www.icq24.com" target="_blank" class="btn-primary">
+          <a
+            href="https://www.icq24.com/contactus"
+            target="_self"
+            class="btn-primary"
+          >
             <i class="fa-solid fa-calendar-check"></i> Agenda una demo
             personalizada &nbsp;→
           </a>
@@ -2887,7 +2942,7 @@
         </div>
 
         <div class="faqs-list">
-          <div class="faq-item open" id="faq1">
+          <div class="faq-item" id="faq1">
             <div class="faq-q" onclick="toggleFaq('faq1')">
               <span class="faq-q-text">¿Qué es Five9?</span>
               <div class="faq-icon">
@@ -2994,11 +3049,10 @@
         <div class="icq24-close">
           <a
             href="https://www.icq24.com/contactus"
-            target="_blank"
+            target="_self"
             class="btn-primary"
           >
-            <i class="fa-solid fa-calendar-check"></i> Habla con un especialista
-            &nbsp;→
+            <i class="fa-solid fa-calendar-check"></i> Agenda una DEMO &nbsp;→
           </a>
         </div>
       </div>
